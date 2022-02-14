@@ -138,7 +138,10 @@ int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 
 		}
 	}
-	days_count += c_day;
+	if (c_month != 1)
+	{
+		days_count += c_day;
+	}
 	return days_count;
 }
 
@@ -185,9 +188,9 @@ int Date::Duration(Date now_date)
 	}
 	else
 	{
-		.
+		
 	}
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < 0; i++)
 	{
 
 	}
