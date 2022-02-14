@@ -17,25 +17,22 @@ Date Date::NextDay()
 {
 	if (c_day == 31 && c_month == 12) // checking for the next year
 	{
-		Date next_day(1, 1, ++c_year);
+		Date next_day(1, 1, c_year + 1);
 		return next_day;
-		/*next_day.c_day = 1;
-		next_day.c_month = 1;
-		next_day.c_year = c_year++;*/
 	}
 	else if (c_day == 28 && !isLeap() || c_day == 29 && isLeap()) // checking for the last day of Feb
 	{
-		Date next_day(1, ++c_month, c_year);
+		Date next_day(1, c_month + 1, c_year);
 		return next_day;
 	}
 	else if (c_day == 30 && !MonthCheck(c_month) || c_day == 31 && MonthCheck(c_month)) // checking for the count of days in month
 	{
-		Date next_day(1, ++c_month, c_year);
+		Date next_day(1, c_month + 1, c_year);
 		return next_day;
 	}
 	else
 	{
-		Date next_day(++c_day, c_month, c_year);
+		Date next_day(c_day + 1, c_month, c_year);
 		return next_day;
 	}
 }
@@ -44,43 +41,44 @@ Date Date::PreviousDay()
 {
 	if (c_day == 1 && c_month == 1) // checking for the previous year
 	{
-		Date previous_day(31, 12, --c_year);
+		Date previous_day(31, 12, c_year - 1);
 		return previous_day;
 	}
 	else if (c_day == 1 && c_month == 3 && !isLeap()) // checking for Feb
 	{
-		Date previous_day(28, --c_month, c_year);
+		Date previous_day(28, c_month - 1, c_year);
 		return previous_day;
 	}
 	else if (c_day == 1 && c_month == 3 && isLeap()) // checking for the leap Feb
 	{
-		Date previous_day(29, --c_month, c_year);
+		Date previous_day(29, c_month - 1, c_year);
 	}
 	else if (c_day == 1 && !MonthCheck(c_month - 1)) // checking for 30 days
 	{
-		Date previous_day(30, --c_month, c_year);
+		Date previous_day(30, c_month - 1, c_year);
 		return previous_day;
 	}
 	else if (c_day == 1 && MonthCheck(c_month - 1)) // checking for 31 days
 	{
-		Date previous_day(31, --c_month, c_year);
+		Date previous_day(31, c_month - 1, c_year);
 		return previous_day;
 	}
 	else
 	{
-		Date previous_day(--c_day, c_month, c_year);
+		Date previous_day(c_day - 1, c_month, c_year);
 		return previous_day;
 	}
 }
 
 bool Date::isLeap()
 {
-	if (c_year % 4 == 0)
+	if (c_year % 4 == 0 && c_year % 100 != 0)
 	{
 		return 1;
 	}
 	else return 0;
 }
+
 
 int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 	int days_count = 0, i = 1;
@@ -116,7 +114,7 @@ int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 		}
 	}
 
-	for (; i != b_month; i++)
+	for (; b_month != i; b_month++)
 	{
 		if (c_month == 13)
 		{
@@ -140,13 +138,14 @@ int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 
 		}
 	}
+	days_count += c_day;
 	return days_count;
 }
 
-short Date::WeekNumber()
+short Date::WeekNumber(Date dt)
 {
 	short week_number = 1;
-	int days_count = CountOfDays();
+	int days_count = dt.CountOfDays();
 	double week_number_d = static_cast<double>(days_count) / 7;
 	if (days_count % 7 > 0)
 	{
@@ -162,10 +161,45 @@ int Date::DaysTillBirthday(Date birthday)
 	return days_count;
 }
 
-int Date::Duration(Date new_date)
-{
-
+Date& Date::operator++() {
+	this->NextDay();
+	return *this;
 }
+
+std::istream& operator>>(std::istream &os,Date &dt) {
+	
+	os >> dt.c_day;
+	os.ignore();
+	os >> dt.c_month;
+	os.ignore();
+	os >> dt.c_year;
+	return os;
+}
+
+int Date::Duration(Date now_date)
+{
+	int i;
+	if (now_date.c_year > c_year)
+	{
+		i = c_year;
+	}
+	else
+	{
+		.
+	}
+	for (int i = 0; i < length; i++)
+	{
+
+	}
+	return 0;
+}
+
+QTableWidgetItem* Date::PrintDate()
+{
+	QTableWidgetItem* it = new QTableWidgetItem(QString("%1.%2.%3").arg(c_day).arg(c_month).arg(c_year));;
+	return it;
+}
+
 
 bool Date::MonthCheck(int month)
 {
@@ -173,3 +207,4 @@ bool Date::MonthCheck(int month)
 		return 1;
 	else return 0;
 }
+
