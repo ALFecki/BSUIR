@@ -155,7 +155,7 @@ int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 	{
 		days_count -= c_day - b_day;
 	}
-	if (b_day != 1)
+	else if (b_day != 1)
 	{
 		days_count += b_day;
 	}

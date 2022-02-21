@@ -9,6 +9,7 @@
 #include <qwidget.h>
 #include <fstream>
 #include <istream>
+#include <qfiledialog.h>
 
 
 class Date
@@ -34,7 +35,6 @@ public:
 private:
     
     int c_day, c_month, c_year;
-    int month_days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30 ,31 };
     
 };
 

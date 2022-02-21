@@ -60,7 +60,10 @@ void Dates::on_lineEdit()
 
 void Dates::on_pushButton_clicked() // set new date
 {
-	std::ifstream file("input.txt");
+	
+	 QString filename = QFileDialog::getOpenFileName(this, tr("Open your Dates"), "C:/Users/AleXandR/Documents/BSUIR/Labs2/C++/Lab 1/Dates", 
+		 tr("Text File (*.txt)"));
+	std::ifstream file(filename.toStdString());
 
 	for (int i = 1; !file.eof(); i++)
 	{
