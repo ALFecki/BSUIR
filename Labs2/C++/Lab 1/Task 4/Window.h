@@ -18,11 +18,13 @@ public:
 
 private slots:
 	void on_pushButtonOpen_clicked();
+	void on_pushButtonAddFromFile_clicked();
 	void on_pushButtonAdd_clicked();
+	void lineEditChanges();
 
 private:
+	int class_size;
 	void printInfo();
-	int* class_size;
 
 	Ui::WindowClass ui;
 
