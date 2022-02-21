@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dgd6iBIOP+hiowMdPqGEYDYy/jXt7ptYXz7fwIrJlxtP+XRiqELiXt3eaCx2JW3fNGs5TKsK6Q+PFZwzRkfQ1Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AleXandR\\Documents\\BSUIR\\Labs2\\C#\\Lab 1\\_153501_Skvortsov_\\_153501_Skvortsov_\\_153501_Skvortsov_.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AleXandR\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\AleXandR\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,16 +1,20 @@
 #pragma once
 
+#include <QtWidgets/QMainWindow>
 #include <cmath>
 #include <string>
-#include <istream>
 #include <fstream>
 #include <iostream>
-
+#include <qfiledialog.h>
 
 
 class Abiturients
 {
  
+
+
+
+
 public:
     std::string name;
     std::string specialization;
@@ -18,7 +22,8 @@ public:
     int math, physics, russian;
     //std::string tmp_math, tmp_phys, tmp_rus;
     friend std::istream& operator>>(std::istream&, Abiturients&);
-    
+    friend std::istream& operator<<(std::istream&, Abiturients&);
+    //Abiturients* initializeAbit();
 
     //Abiturients(std::string name = "Ivanov Ivan", std::string spec = "Programmer", double avg_m = 9.2,
     //    )

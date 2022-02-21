@@ -9,20 +9,22 @@
 
 class Window : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT;
 
 public:
-    Window(QWidget *parent = Q_NULLPTR);
-    Abiturients* main_abitur;
+	Window(QWidget* parent = Q_NULLPTR);
+	Abiturients* main_abitur;
 
 
 private slots:
-    void on_pushButtonAdd_clicked();
+	void on_pushButtonOpen_clicked();
+	void on_pushButtonAdd_clicked();
 
 private:
-    void printInfo();
-    
-    Ui::WindowClass ui;
+	void printInfo();
+	int* class_size;
+
+	Ui::WindowClass ui;
 
 };
 

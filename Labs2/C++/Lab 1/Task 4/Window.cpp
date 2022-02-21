@@ -30,7 +30,7 @@ Abiturients* AddMemory(Abiturients* abitur, int num_elements)
 }
 
 
-void Window::on_pushButtonAdd_clicked()
+void Window::on_pushButtonOpen_clicked()
 {
 	QString filename = QFileDialog::getOpenFileName(this, tr("Open"), "C:/Users/AleXandR/Documents/BSUIR/Labs2/C++/Lab 1/Task 4",
 		tr("Text Files (*.txt)"));
@@ -44,15 +44,34 @@ void Window::on_pushButtonAdd_clicked()
 		{
 			ui.comboBox->addItem(QString(QString::fromStdString(main_abitur[i].specialization)));
 		}
+		*class_size = i;
 	}
 	printInfo();
 
 }
 
+void Window::on_pushButtonAdd_clicked()
+{
+	QString filename = QFileDialog::getOpenFileName(this, tr("Open"), "C:/Users/AleXandR/Documents/BSUIR/Labs2/C++/Lab 1/Task 4",
+		tr("Text Files (*.txt)"));
+	std::ifstream fileAdd(filename.toStdString());
+	for (; !fileAdd.eof(); (*class_size)++)
+	{
+		main_abitur = AddMemory(main_abitur, *class_size);
+		fileAdd >> main_abitur[*class_size];
+		if (ui.comboBox->findText(QString::fromStdString(main_abitur[*class_size].specialization)) == -1)
+		{
+			ui.comboBox->addItem(QString(QString::fromStdString(main_abitur[*class_size].specialization)));
+		}
+	}
+	ui.plainTextEdit->clear();
+	printInfo();
+}
+
 
 void Window::printInfo()
 {
-	for (int i = 0; i < ui.comboBox->count() + 1; i++)
+	for (int i = 0; i < *class_size; i++)
 	{
 		ui.plainTextEdit->appendPlainText(QString::fromStdString(main_abitur[i].name));
 		ui.plainTextEdit->appendPlainText(QString::fromStdString(main_abitur[i].specialization));
@@ -72,6 +91,6 @@ void Window::printInfo()
 		//{
 		//	ui.plainTextEdit->insertPlainText(QString(" %1").arg(main_abitur[i].russian[j]));
 		//}
-		ui.plainTextEdit->appendPlainText("====================================================");
+		ui.plainTextEdit->appendPlainText("==================================================");
 	}
 }

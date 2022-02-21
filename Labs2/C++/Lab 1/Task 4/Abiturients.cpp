@@ -74,3 +74,60 @@ std::istream& operator>>(std::istream& oper, Abiturients& abitur)
     //abitur.avg_mark = marks_sum / marks_num;
     return oper;
 }
+
+
+//std::istream& operator<<(std::istream& oper, Abiturients& abitur)
+//{
+//    oper<< abitur.name;
+//};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Abiturients* AddMemory(Abiturients* abitur, int num_elements)
+//{
+//    if (num_elements == 0)
+//    {
+//        abitur = new Abiturients[num_elements + 1];
+//    }
+//    else
+//    {
+//        Abiturients* abitur_temp = new Abiturients[num_elements + 1];
+//
+//        for (int i = 0; i < num_elements; i++)
+//        {
+//            abitur_temp[i] = abitur[i];
+//        }
+//        delete[] abitur;
+//        abitur = abitur_temp;
+//    }
+//    return abitur;
+//}
+
+//Abiturients* Abiturients::initializeAbit()
+//{
+//    QString filename = QFileDialog::getOpenFileName(this, tr("Open"), "C:/Users/AleXandR/Documents/BSUIR/Labs2/C++/Lab 1/Task 4",
+//        tr("Text Files (*.txt)"));
+//    std::ifstream file(filename.toStdString());
+//
+//    for (int i = 0; !file.eof(); i++)
+//    {
+//        this = AddMemory(this, i);
+//        file >> this[i];
+//        /*if (ui->comboBox->findText(QString::fromStdString(this[i].specialization)) == -1)
+//        {
+//            ui.comboBox->addItem(QString(QString::fromStdString(main_abitur[i].specialization)));
+//        }*/
+//    }
+//    return this;
+//}
