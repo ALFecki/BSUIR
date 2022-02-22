@@ -17,7 +17,7 @@ Figures::Figures(QWidget *parent)
     
     scene->setSceneRect(0, 0, 1200, 600);
 
-    connect(ui.horizontalSlider, &QSlider::valueChanged, this, &Figures::on_horizontalSlider);
+    //connect(ui.horizontalSlider, &QSlider::valueChanged, this, &Figures::on_horizontalSlider);
 }
 
 void Figures::on_horizontalSlider()

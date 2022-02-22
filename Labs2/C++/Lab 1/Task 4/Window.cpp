@@ -5,10 +5,14 @@ Window::Window(QWidget* parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	dialog = new QWidget();
+	form_ui.setupUi(dialog);
+	dialog->setWindowTitle("Error!");
+	dialog->hide();
 	ui.plainTextEdit->setReadOnly(true);
 	ui.comboBox->addItem("Any");
 
-	connect(ui.comboBox, &QComboBox::currentTextChanged, this, &Window::lineEditChanges);
+	connect(ui.comboBox, &QComboBox::currentTextChanged, this, &Window::comboBoxChanges);
 }
 
 Abiturients* AddMemory(Abiturients* abitur, int num_elements)
@@ -73,16 +77,37 @@ void Window::on_pushButtonAddFromFile_clicked()
 
 void Window::on_pushButtonAdd_clicked()
 {
-	if (ui.lineEdit->selectedText() == "\0" && ui.lineEdit_2->selectedText() == "\0" &&
-		ui.lineEdit_3->selectedText() == "\0" && ui.lineEdit_4->selectedText() == "\0" &&
-		ui.lineEdit_5->selectedText() == "\0" && ui.lineEdit_6->selectedText() == "\0"&&)
+	if (ui.lineEdit->text() == "\0" || ui.lineEdit_2->text() == "\0" ||
+		ui.lineEdit_3->text() == "\0" || ui.lineEdit_4->text() == "\0" ||
+		ui.lineEdit_5->text() == "\0" || ui.lineEdit_6->text() == "\0")
 	{
-
+		dialog->show();
+	}
+	else
+	{
+		main_abitur = AddMemory(main_abitur, class_size);
+		main_abitur[class_size].name = ui.lineEdit->text().toStdString();
+		ui.lineEdit->clear();
+		main_abitur[class_size].specialization = ui.lineEdit_2->text().toStdString();
+		ui.lineEdit_2->clear();
+		if (ui.comboBox->findText(QString::fromStdString(main_abitur[class_size].specialization)) == -1)
+		{
+			ui.comboBox->addItem(QString(QString::fromStdString(main_abitur[class_size].specialization)));
+		}
+		main_abitur[class_size].avg_mark = ui.lineEdit_3->text().toDouble();
+		ui.lineEdit_3->clear();
+		main_abitur[class_size].math = ui.lineEdit_4->text().toInt();
+		ui.lineEdit_4->clear();
+		main_abitur[class_size].physics = ui.lineEdit_5->text().toInt();
+		ui.lineEdit_5->clear();
+		main_abitur[class_size].russian = ui.lineEdit_6->text().toInt();
+		ui.lineEdit_6->clear();
+		class_size++;
 	}
 }
 
 
-void Window::lineEditChanges()
+void Window::comboBoxChanges()
 {
 	ui.plainTextEdit->clear();
 	if (ui.comboBox->currentText() == "Any")
@@ -94,11 +119,14 @@ void Window::lineEditChanges()
 	{
 		if (ui.comboBox->currentText() == QString::fromStdString(main_abitur[i].specialization))
 		{
-			ui.plainTextEdit->appendPlainText(QString::fromStdString(main_abitur[i].name));
-			ui.plainTextEdit->appendPlainText(QString("Average mark: %1").arg(main_abitur[i].avg_mark));
-			ui.plainTextEdit->appendPlainText(QString("Math: %1").arg(main_abitur[i].math));
-			ui.plainTextEdit->appendPlainText(QString("Physics: %1").arg(main_abitur[i].physics));
-			ui.plainTextEdit->appendPlainText(QString("Russian: %1").arg(main_abitur[i].russian));
+			ui.plainTextEdit->appendPlainText(QString("#%1 ").arg(i + 1));
+			ui.plainTextEdit->insertPlainText(QString::fromStdString(main_abitur[i].name));
+			int sum_rate = main_abitur[i].avg_mark * 10 + main_abitur[i].math + main_abitur[i].physics + main_abitur[i].russian;
+			ui.plainTextEdit->appendPlainText(QString("Total score: %1").arg(sum_rate));
+			//ui.plainTextEdit->appendPlainText(QString("Average mark: %1").arg(main_abitur[i].avg_mark));
+			//ui.plainTextEdit->appendPlainText(QString("Math: %1").arg(main_abitur[i].math));
+			//ui.plainTextEdit->appendPlainText(QString("Physics: %1").arg(main_abitur[i].physics));
+			//ui.plainTextEdit->appendPlainText(QString("Russian: %1").arg(main_abitur[i].russian));
 			ui.plainTextEdit->appendPlainText("==================================================");
 		}
 	}
@@ -109,7 +137,8 @@ void Window::printInfo()
 {
 	for (int i = 0; i < class_size; i++)
 	{
-		ui.plainTextEdit->appendPlainText(QString::fromStdString(main_abitur[i].name));
+		ui.plainTextEdit->appendPlainText(QString("#%1 ").arg(i + 1));
+		ui.plainTextEdit->insertPlainText(QString::fromStdString(main_abitur[i].name));
 		ui.plainTextEdit->appendPlainText(QString::fromStdString(main_abitur[i].specialization));
 		ui.plainTextEdit->appendPlainText(QString("Average mark: %1").arg(main_abitur[i].avg_mark));
 		ui.plainTextEdit->appendPlainText(QString("Math: %1").arg(main_abitur[i].math));

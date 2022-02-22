@@ -1,17 +1,32 @@
 #include "Dates.h"
 
-bool Date::isValidEnter()
+Date::Date(int day, int month, int year) : c_day(day), c_month(month), c_year(year)
 {
-	if ((c_day == 31 || c_day == 30) && !MonthCheck(c_month))
+	if ((c_day == 31 || c_day == 30) && !MonthCheck(c_month) || (c_day == 29 && !isLeap()))
 	{
-		return 0;
+		if (c_month == 12)
+		{
+			c_month = 0;
+			c_year++;
+		}
+		c_day = 1;
+		c_month++;
 	}
-	else if (c_day == 29 && !isLeap())
-	{
-		return 0;
-	}
-	else return 1;
 }
+void Date::isValid()
+{
+	if ((c_day == 31 || c_day == 30) && !MonthCheck(c_month) || (c_day == 29 && !isLeap()))
+	{
+		if (c_month == 12)
+		{
+			c_month = 0;
+			c_year++;
+		}
+		c_day = 1;
+		c_month++;
+	}
+}
+
 
 Date Date::NextDay()
 {
@@ -88,7 +103,7 @@ int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 		{
 			i = 1;
 		}
-		else 
+		else
 		{
 			i = c_month + 1;
 		}
@@ -159,14 +174,14 @@ int Date::CountOfDays(int b_day = 1, int b_month = 1) {
 	{
 		days_count += b_day;
 	}
-	
+
 	return days_count;
 }
 
 short Date::WeekNumber(Date dt)
 {
 	short week_number = 1;
-	int days_count = this->CountOfDays(dt.c_day,dt.c_month);
+	int days_count = this->CountOfDays(dt.c_day, dt.c_month);
 	double week_number_d = static_cast<double>(days_count) / 7;
 	if (days_count % 7 > 0)
 	{
@@ -190,8 +205,6 @@ int Date::DaysTillBirthday(Date birthday)
 	{
 		return Duration(birthday);
 	}
-	
-	
 }
 
 int Date::Duration(Date now_date)
@@ -267,7 +280,31 @@ int Date::Duration(Date now_date)
 
 QTableWidgetItem* Date::PrintDate()
 {
-	QTableWidgetItem* it = new QTableWidgetItem(QString("%1.%2.%3").arg(c_day).arg(c_month).arg(c_year));;
+	QString day = QString::number(c_day);
+	QString month = QString::number(c_month);
+	QString year = QString::number(c_year);
+	if (c_day < 10)
+	{
+		day = '0' + QString::number(c_day);
+	}
+	if (c_month < 10)
+	{
+		month = '0' + QString::number(c_month);
+	}
+	if (c_year < 1000)
+	{
+		year = '0' + QString::number(c_year);
+	}
+	else if (c_year < 100)
+	{
+		year = "00" + QString::number(c_year);
+	}
+	else if (c_year < 10)
+	{
+		year = "000" + QString::number(c_year);
+	}
+
+	QTableWidgetItem* it = new QTableWidgetItem(QString("%1.%2.%3").arg(day).arg(month).arg(year));
 	return it;
 }
 
@@ -280,10 +317,10 @@ bool Date::MonthCheck(int month)
 }
 
 
-Date& Date::operator++() {
-	this->NextDay();
-	return *this;
-}
+//Date& Date::operator++() {
+//	this->NextDay();
+//	return *this;
+//}
 
 std::istream& operator>>(std::istream& os, Date& dt) {
 
@@ -293,6 +330,34 @@ std::istream& operator>>(std::istream& os, Date& dt) {
 	os.ignore();
 	os >> dt.c_year;
 	return os;
+}
+
+std::istream& operator<<(std::istream& out, Date& dt)
+{
+	QString day = QString::number(dt.c_day);
+	QString month = QString::number(dt.c_month);
+	QString year = QString::number(dt.c_year);
+	if (dt.c_day < 10)
+	{
+		//out << dt.c_day << 
+	}
+	if (dt.c_month < 10)
+	{
+		month = '0' + QString::number(dt.c_month);
+	}
+	if (dt.c_year < 1000)
+	{
+		year = '0' + QString::number(dt.c_year);
+	}
+	else if (dt.c_year < 100)
+	{
+		year = "00" + QString::number(dt.c_year);
+	}
+	else if (dt.c_year < 10)
+	{
+		year = "000" + QString::number(dt.c_year);
+	}
+
 }
 
 

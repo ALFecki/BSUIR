@@ -7,6 +7,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_Dates.h"
 #include <qwidget.h>
+#include <string>
 #include <fstream>
 #include <istream>
 #include <qfiledialog.h>
@@ -16,8 +17,7 @@ class Date
 {
     friend class Dates;
 public:
-    Date(int day = 1, int month = 1, int year = 1979)
-        : c_day(day), c_month(month), c_year(year) {}
+    Date(int day = 1, int month = 1, int year = 1979);
      
     Date NextDay();
     Date PreviousDay();
@@ -26,14 +26,16 @@ public:
     short WeekNumber(Date);
     int DaysTillBirthday(Date);
     int Duration(Date);
-    bool isValidEnter();
+    void isValid();
     bool MonthCheck(int month);
     QTableWidgetItem* PrintDate();
-    Date& operator++();
     friend std::istream& operator>>(std::istream&, Date&);
+    friend std::istream& operator<< (std::istream&, Date&);
+
 
 private:
     
+ 
     int c_day, c_month, c_year;
     
 };
@@ -56,9 +58,13 @@ private slots:
     void on_pushButton_4_clicked();
     void on_pushButton_5_clicked();
     void on_pushButton_6_clicked();
-    
+    void on_pushButtonAdd_clicked();
+    void on_pushButtonSave_clicked();
 
 private:
+    Date* g_dt;
+    QString filename;
+    int date_size;
     Ui::DatesClass ui;
 };
 

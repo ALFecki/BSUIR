@@ -4,6 +4,7 @@
 #include <qcombobox.h>
 #include "ui_Window.h"
 #include <qfiledialog.h>
+#include "ui_QDialog.h"
 
 
 
@@ -20,13 +21,16 @@ private slots:
 	void on_pushButtonOpen_clicked();
 	void on_pushButtonAddFromFile_clicked();
 	void on_pushButtonAdd_clicked();
-	void lineEditChanges();
+	void comboBoxChanges();
 
 private:
 	int class_size;
 	void printInfo();
 
 	Ui::WindowClass ui;
+	QWidget* dialog;
+	Ui::Form form_ui;
+
 
 };
 
