@@ -30,7 +30,7 @@ public:
     bool MonthCheck(int month);
     QTableWidgetItem* PrintDate();
     friend std::istream& operator>>(std::istream&, Date&);
-    friend std::istream& operator<< (std::istream&, Date&);
+    friend std::fstream& operator<< (std::fstream&, Date&);
 
 
 private:
@@ -64,7 +64,7 @@ private slots:
 private:
     Date* g_dt;
     QString filename;
-    int date_size;
+    int date_size, date_from_file;
     Ui::DatesClass ui;
 };
 

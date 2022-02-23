@@ -12,23 +12,17 @@ Figures::Figures(QWidget *parent)
     this->setFixedSize(1280, 720);
     scene = new QGraphicsScene();
     timer = new QTimer(this);
-
     ui.graphicsView->setScene(scene);
     
     scene->setSceneRect(0, 0, 1200, 600);
 
-    //connect(ui.horizontalSlider, &QSlider::valueChanged, this, &Figures::on_horizontalSlider);
 }
 
-void Figures::on_horizontalSlider()
-{
-    
-}
 
 
 void Figures::on_pushButtonCenter_clicked()
 {
-    //sh->area_and_perim();
+    
 }
 
 void Figures::on_radioButtonTriangle_clicked()
@@ -53,7 +47,7 @@ void Figures::on_radioButtonRhombus_clicked()
 void Figures::on_radioButtonRectangle_clicked()
 {
     scene->clear();
-    //sh = new Rectangle;
+    sh = new Rectangle;
     sh->setPos(rand() % 1000, rand() % 1000);
     scene->addItem(sh);
 }

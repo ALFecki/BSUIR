@@ -14,7 +14,7 @@
 #include <qmovie.h>
 
 
-class Shape : public QGraphicsScene, public QGraphicsItem
+class Shape : public QGraphicsScene, public QGraphicsItem, public QObject
 {
 public:
 	

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>899</width>
-    <height>514</height>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>460</x>
       <y>0</y>
       <width>441</width>
-      <height>451</height>
+      <height>431</height>
      </rect>
     </property>
    </widget>
@@ -28,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>240</y>
+      <y>0</y>
       <width>101</width>
       <height>211</height>
      </rect>
@@ -66,7 +66,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButtonDelete">
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSort">
        <property name="font">
         <font>
          <pointsize>10</pointsize>
@@ -74,6 +81,18 @@
        </property>
        <property name="text">
         <string>Sort</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSave">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Save</string>
        </property>
       </widget>
      </item>
@@ -110,7 +129,7 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>100</x>
       <y>100</y>
       <width>161</width>
       <height>311</height>
@@ -170,7 +189,7 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>74</x>
+      <x>54</x>
       <y>103</y>
       <width>41</width>
       <height>55</height>
@@ -188,7 +207,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>35</x>
+      <x>15</x>
       <y>195</y>
       <width>81</width>
       <height>70</height>
@@ -206,7 +225,7 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>41</x>
+      <x>21</x>
       <y>230</y>
       <width>71</width>
       <height>96</height>
@@ -224,7 +243,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>68</x>
+      <x>48</x>
       <y>311</y>
       <width>51</width>
       <height>31</height>
@@ -242,7 +261,7 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>67</x>
+      <x>47</x>
       <y>350</y>
       <width>51</width>
       <height>51</height>
@@ -260,7 +279,7 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>170</y>
       <width>81</width>
       <height>20</height>
@@ -273,6 +292,70 @@
     </property>
     <property name="text">
      <string>Specialization:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>440</y>
+      <width>99</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Quit</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_7">
+    <property name="geometry">
+     <rect>
+      <x>268</x>
+      <y>368</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>347</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSearch">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>390</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
     </property>
    </widget>
   </widget>
@@ -300,5 +383,22 @@
  <resources>
   <include location="Window.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>811</x>
+     <y>490</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>631</x>
+     <y>467</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

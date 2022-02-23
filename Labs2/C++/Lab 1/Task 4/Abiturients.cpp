@@ -75,6 +75,18 @@ std::istream& operator>>(std::istream& oper, Abiturients& abitur)
     return oper;
 }
 
+std::ostream& operator<<(std::ostream& out, Abiturients& abitur)
+{
+    out << "Name:" << abitur.name << std::endl;
+    out << "Specialization: " << abitur.specialization << std::endl;
+    out << "Average mark: " << abitur.avg_mark << std::endl;
+    out << "Mathematics: " << abitur.math << std::endl;
+    out << "Physics: " << abitur.physics << std::endl;
+    out << "Russian: " << abitur.russian << std::endl;
+    out << "=======================================================" << std::endl;
+    return out;
+}
+
 
 //std::istream& operator<<(std::istream& oper, Abiturients& abitur)
 //{

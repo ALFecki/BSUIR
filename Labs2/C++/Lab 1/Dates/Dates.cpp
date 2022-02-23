@@ -78,6 +78,7 @@ void Dates::on_pushButton_clicked() // set new date
 		g_dt[date_size].isValid();
 		ui.tableWidget->setItem(date_size, 0, (g_dt[date_size]).PrintDate());
 	}
+	date_from_file = date_size;
 }
 
 void Dates::on_pushButton_2_clicked()
@@ -187,9 +188,21 @@ void Dates::on_pushButtonSave_clicked()
 	if (filename != save_name)
 	{
 		filename = save_name;
+		std::fstream out_file;
+		out_file.open(filename.toStdString(), std::ios::in | std::ios::out);
 		for (int i = 0; i < date_size; i++)
 		{
-
+			out_file << g_dt[i] << std::endl;
+		}
+	}
+	else
+	{
+		std::fstream out_file(save_name.toStdString(), std::ios::app);
+		out_file.seekp(0, std::ios::end);
+		for (int i = date_from_file; i < date_size; i++)
+		{
+			out_file << std::endl;
+			out_file << g_dt[i];
 		}
 	}
 }

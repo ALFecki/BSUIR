@@ -5,6 +5,7 @@
 #include "ui_Window.h"
 #include <qfiledialog.h>
 #include "ui_QDialog.h"
+#include "ui_Delete_form.h"
 
 
 
@@ -15,24 +16,26 @@ class Window : public QMainWindow
 public:
 	Window(QWidget* parent = Q_NULLPTR);
 	Abiturients* main_abitur;
-
+	Abiturients* spec_abitur;
 
 private slots:
 	void on_pushButtonOpen_clicked();
 	void on_pushButtonAddFromFile_clicked();
 	void on_pushButtonAdd_clicked();
+	void deleteAbitur();
 	void comboBoxChanges();
+	void sortAbitur();
+	void on_pushButtonSave_clicked();
+	void on_pushButtonSearch_clicked();
 
 private:
-	int class_size;
+	int class_size, abiturs_from_file;
+	int spec_size;
+	QString filename;
 	void printInfo();
 
 	Ui::WindowClass ui;
-	QWidget* dialog;
+	Ui::Form1 del_ui;
+	QWidget* dialog,* del_dialog;
 	Ui::Form form_ui;
-
-
 };
-
-
-

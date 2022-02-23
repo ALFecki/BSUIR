@@ -332,32 +332,44 @@ std::istream& operator>>(std::istream& os, Date& dt) {
 	return os;
 }
 
-std::istream& operator<<(std::istream& out, Date& dt)
+std::fstream& operator<<(std::fstream& out, Date& dt)
 {
 	QString day = QString::number(dt.c_day);
 	QString month = QString::number(dt.c_month);
 	QString year = QString::number(dt.c_year);
 	if (dt.c_day < 10)
 	{
-		//out << dt.c_day << 
+		out << '0' << dt.c_day << '.';
+	}
+	else
+	{
+		out << dt.c_day << '.';
 	}
 	if (dt.c_month < 10)
 	{
-		month = '0' + QString::number(dt.c_month);
+		out << '0' << dt.c_month << '.';
+	}
+	else
+	{
+		out << dt.c_month << '.';
 	}
 	if (dt.c_year < 1000)
 	{
-		year = '0' + QString::number(dt.c_year);
+		out << '0' << dt.c_year;
 	}
 	else if (dt.c_year < 100)
 	{
-		year = "00" + QString::number(dt.c_year);
+		out << "00" << dt.c_year;
 	}
 	else if (dt.c_year < 10)
 	{
-		year = "000" + QString::number(dt.c_year);
+		out << "000" << dt.c_year;
 	}
-
+	else
+	{
+		out << dt.c_year;
+	}
+	return out;
 }
 
 
