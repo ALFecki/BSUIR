@@ -19,12 +19,6 @@ Figures::Figures(QWidget *parent)
 }
 
 
-
-void Figures::on_pushButtonCenter_clicked()
-{
-    
-}
-
 void Figures::on_radioButtonTriangle_clicked()
 {
     scene->clear();

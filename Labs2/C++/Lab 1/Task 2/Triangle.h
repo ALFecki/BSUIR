@@ -9,8 +9,6 @@ class Triangle : public Shape
 public:
 	Triangle(int x1_ = 0, int y1_ = -200, int x2_ = -400, int y2_ = 100, int x3_ = 400, int y3_ = 100);
 
-	
-
 private:
 
 	int x1, x2, x3, y1, y2, y3;

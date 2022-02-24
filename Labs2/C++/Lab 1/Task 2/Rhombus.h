@@ -43,25 +43,6 @@ private:
 		this->setCursor(QCursor(Qt::ArrowCursor));
 		Q_UNUSED(event);
 	}
-
-	
-	//virtual void keyPressEvent(QKeyEvent* butt)
-	//{
-	//	switch (butt->key())
-	//	{
-	//	
-	//	case Qt::Key_D:
-	//		size += 0.1;
-	//		
-	//	case Qt::Key_2:
-	//		size -= 0.1;
-	//	}
-	//}
-
-	//virtual void keyReleaseEvent(QKeyEvent* butt)
-	//{
-
-	//}
 	
 	virtual void wheelEvent(QGraphicsSceneWheelEvent* event)
 	{

@@ -21,12 +21,8 @@ private:
 
 
 private slots:
-    void on_horizontalSlider();
-    
-    void on_pushButtonCenter_clicked();
-    //void on_pushButtonPerimetr_clicked();
-    //void on_pushButtonArea_clicked();
-    
+
+    void on_pushButtonMain_clicked();
     void on_radioButtonTriangle_clicked();
     void on_radioButtonRhombus_clicked();
     void on_radioButtonRectangle_clicked();
