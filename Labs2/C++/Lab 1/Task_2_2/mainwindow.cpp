@@ -26,6 +26,29 @@ mainwindow::mainwindow(QWidget *parent)
     canva_dialog->hide();
     ui.setupUi(this);
     
+    trian_ui.lineEdit->setInputMask("0000");
+    trian_ui.lineEdit_2->setInputMask("0000");
+    trian_ui.lineEdit_3->setInputMask("0000");
+    trian_ui.lineEdit_4->setInputMask("0000");
+    trian_ui.lineEdit_5->setInputMask("0000");
+    trian_ui.lineEdit_6->setInputMask("0000");
+
+    rect_ui.lineEdit->setInputMask("0000");
+    rect_ui.lineEdit_2->setInputMask("0000");
+
+    square_ui.lineEdit->setInputMask("0000");
+
+    circle_ui.lineEdit->setInputMask("0000");
+
+    rhomb_ui.lineEdit->setInputMask("0000");
+    rhomb_ui.lineEdit_2->setInputMask("0000");
+    
+    trap_ui.lineEdit->setInputMask("0000");
+    trap_ui.lineEdit_2->setInputMask("0000");
+    trap_ui.lineEdit_3->setInputMask("0000");
+    trap_ui.lineEdit_4->setInputMask("0000");
+    
+    
     scene = new QGraphicsScene(0, 0, 1280, 720, this);
 
     ui.graphicsView->setScene(scene);
@@ -70,15 +93,9 @@ void mainwindow::CreateSquare()
 
 void mainwindow::CreateRhombus()
 {
-    int x1 = rhomb_ui.lineEdit->text().toInt();
-    int x2 = rhomb_ui.lineEdit_2->text().toInt();
-    int x3 = rhomb_ui.lineEdit_3->text().toInt();
-    int x4 = rhomb_ui.lineEdit_4->text().toInt();
-    int y1 = rhomb_ui.lineEdit_5->text().toInt();
-    int y2 = rhomb_ui.lineEdit_6->text().toInt();
-    int y3 = rhomb_ui.lineEdit_7->text().toInt();
-    int y4 = rhomb_ui.lineEdit_8->text().toInt();
-    Rhombus* rhombus = new Rhombus(x1, y1, x2, y2, x3, y3, x4, y4);
+    int diagonal_1 = rhomb_ui.lineEdit->text().toInt();
+    int diagonal_2 = rhomb_ui.lineEdit_2->text().toInt();
+    Rhombus* rhombus = new Rhombus(diagonal_1, diagonal_2);
     rhombus->setPos(rand() % 700, rand() % 800);
     rhomb_dialog->close();
     scene->clear();
@@ -111,6 +128,7 @@ void mainwindow::CreateCircle()
     Circle* circle = new Circle(radius);
     circle->setPos(rand() % 700, rand() % 800);
     circle_dialog->close();
+    scene->clear();
     scene->addItem(circle);
     ui.label->setText(circle->infoAboutCircle());
 }
@@ -119,6 +137,7 @@ void mainwindow::on_pushButtonHexagon_2_clicked()
 {
     Hexagon* hexag = new Hexagon;
     hexag->setPos(rand() % 700, rand() % 800);
+    scene->clear();
     scene->addItem(hexag);
     ui.label->setText(hexag->infoAboutHexagon());
 }
@@ -127,6 +146,7 @@ void mainwindow::on_pushButtonStar_2_clicked()
 {
     Star* star = new Star;
     star->setPos(rand() % 700, rand() % 800);
+    scene->clear();
     scene->addItem(star);
 }
 
@@ -142,6 +162,7 @@ void mainwindow::CreateTrapezoid()
     Trapezoid* trapezoid = new Trapezoid(x1, y1, x2, y2);
     trapezoid->setPos(rand() % 700, rand() % 800);
     trap_dialog->close();
+    scene->clear();
     scene->addItem(trapezoid);
     ui.label->setText(trapezoid->infoAboutTrapezoid());
 }

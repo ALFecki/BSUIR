@@ -2,12 +2,9 @@
 
 
 
-Rhombus::Rhombus(int x1_ = 0, int y1_ = -150, int x2_ = -100, int y2_ = 0,
-	int x3_ = 0, int y3_ = 150, int x4_ = 100, int y4_ = 0)
-	: x1(x1_), y1(y1_), x2(x2_), y2(y2_), x3(x3_), y3(y3_), x4(x4_), y4(y4_)
+Rhombus::Rhombus(int diagonal_1_, int diagonal_2_)
+	: diagonal_1(diagonal_1_), diagonal_2(diagonal_2_)
 {
-	diagonal_1 = abs(y1 - y3);
-	diagonal_2 = abs(x2 - x4);
 	size = 1; rot_angle = 0;
 	side = sqrt(pow(diagonal_1 / 2, 2) + pow(diagonal_2 / 2, 2));
 }
@@ -19,6 +16,10 @@ inline void Rhombus::paint(QPainter* painter, const QStyleOptionGraphicsItem* op
 	rot_angle += 5;
 	painter->setPen(Qt::black);
 	painter->setBrush(Qt::blue);
+	x1 = 0; x3 = 0;
+	x2 = -(diagonal_2 / 2); x4 = abs(x2);
+	y1 = -(diagonal_1 / 2); y3 = abs(y1);
+	y2 = 0; y4 = 0;
 	QPolygon pol;
 	pol << QPoint(x1, y1) << QPoint(x2, y2) << QPoint(x3, y3) << QPoint(x4, y4);
 
@@ -90,7 +91,7 @@ Trapezoid::Trapezoid(int x1_ = 0, int y1_ = -150, int x2_ = -100, int y2_ = 0)
 inline void Trapezoid::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
 	painter->rotate(rot_angle);
-	rot_angle += 5;
+	rot_angle += 0.5;
 	painter->setPen(Qt::black);
 	painter->setBrush(Qt::blue);
 	QPolygon pol;
@@ -103,8 +104,6 @@ inline void Trapezoid::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
 	painter->drawPolygon(pol);
 	painter->drawPoint(QRectF(0, 0, x2 + 200, y1).center());
 	QTimer::singleShot(0, this, SLOT(update()));
-
-
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
 }

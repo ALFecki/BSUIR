@@ -39,7 +39,6 @@ private slots:
 
     void CreateTrapezoid();
     void on_pushButton_clicked();
-    //void CreateStar();
 
 
 private:

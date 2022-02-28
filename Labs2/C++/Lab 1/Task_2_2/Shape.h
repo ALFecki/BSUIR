@@ -18,14 +18,13 @@ class Shape : public QObject, public QGraphicsItem
 {
 protected:
 	virtual QRectF boundingRect() const { return QRectF(-800, -800, 1600, 1600);  }
-	virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) {}
+	virtual void paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*) = 0;
 
-	virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event) {}
-	virtual void mousePressEvent(QGraphicsSceneMouseEvent* event) {}
-	virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {}
-	virtual void wheelEvent(QGraphicsSceneWheelEvent* event){}
-	virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event) {}
-
+	virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event) = 0;
+	virtual void mousePressEvent(QGraphicsSceneMouseEvent* event) = 0;
+	virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event) = 0;
+	virtual void wheelEvent(QGraphicsSceneWheelEvent* event) = 0;
+	virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event) = 0;
 
 };
 

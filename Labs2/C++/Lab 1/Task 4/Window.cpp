@@ -6,7 +6,9 @@ Window::Window(QWidget* parent)
 {
 	dialog = new QWidget();
 	del_dialog = new QWidget();
+	warning_dialog = new QWidget();
 	ui.setupUi(this);
+	warning_ui.setupUi(warning_dialog);
 	form_ui.setupUi(dialog);
 	del_ui.setupUi(del_dialog);
 	del_dialog->hide();
@@ -15,6 +17,10 @@ Window::Window(QWidget* parent)
 	dialog->hide();
 	ui.plainTextEdit->setReadOnly(true);
 	ui.comboBox->addItem("Any");
+	ui.lineEdit_3->setInputMask("0.0");
+	ui.lineEdit_4->setInputMask("000");
+	ui.lineEdit_5->setInputMask("000");
+	ui.lineEdit_6->setInputMask("000");
 
 	connect(ui.comboBox, &QComboBox::currentTextChanged, this, &Window::comboBoxChanges);
 	connect(ui.pushButtonDelete, &QPushButton::clicked, del_dialog, &QWidget::show);
@@ -63,6 +69,11 @@ void quick_sort(Abiturients* abitur, int first, int last)
 
 void Window::sortAbitur()
 {
+	if (ui.comboBox->currentText() == "Any")
+	{
+		warning_dialog->show();
+		return;
+	}
 	quick_sort(spec_abitur, 0, spec_size - 1);
 	ui.plainTextEdit->clear();
 	for (int i = 0; i < spec_size; i++)
@@ -80,6 +91,10 @@ void Window::on_pushButtonOpen_clicked()
 {
 	filename = QFileDialog::getOpenFileName(this, tr("Open"), "C:/Users/AleXandR/Documents/BSUIR/Labs2/C++/Lab 1/Task 4",
 		tr("Text Files (*.txt)"));
+	if (filename.isEmpty())
+	{
+		return;
+	}
 	std::ifstream file(filename.toStdString());
 	class_size = 0;
 	for (int i = 0; !file.eof(); i++, class_size++)
@@ -149,6 +164,7 @@ void Window::on_pushButtonAdd_clicked()
 		class_size++;
 		
 	}
+	ui.plainTextEdit->clear();
 	printInfo();
 }
 

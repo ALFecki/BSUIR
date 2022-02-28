@@ -5,7 +5,7 @@
 class Rhombus : public Shape
 {
 public:
-	Rhombus(int x1_, int y1_, int x2_, int y2_, int x3_, int y3_, int x4_, int y4_);
+	Rhombus(int, int);
 	QString infoAboutRhomb();
 
 private:

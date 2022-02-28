@@ -11,7 +11,7 @@ Rectangle::Rectangle(int width_ = 0, int height_ = 0, double rot_angle_ = 0)
 void Rectangle::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
 	painter->rotate(rot_angle);
-	rot_angle += 0.5;
+	rot_angle += 1;
 
 	painter->setPen(Qt::black);
 	painter->setBrush(Qt::red);
@@ -20,7 +20,7 @@ void Rectangle::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
 		painter->scale(size, size);
 	}
 
-	painter->drawRect(-50, -50, width, height);
+	painter->drawRect(-width / 2, -height / 2, width, height);
 	painter->drawPoint(QRectF(-50, -50, width, height).center());
 	QTimer::singleShot(0, this, SLOT(update()));
 	Q_UNUSED(option);

@@ -70,6 +70,7 @@ int main()
 {
 	Expression* sube = new BinaryOperation(new Number(4.5), '*', new Number(5));
 	Expression* expr = new BinaryOperation(new Number(3), '+', sube);
-	std::cout << expr->evaluate() << std::endl;
+	BinaryOperation* binop = new BinaryOperation(new BinaryOperation(new Number(4.5), '*', new Number(5)), '*', new BinaryOperation(new Number(3), '+', sube));
+	std::cout << binop->evaluate() << std::endl;
 	delete expr;
 }

@@ -87,7 +87,7 @@ Date Date::PreviousDay()
 
 bool Date::isLeap()
 {
-	if (c_year % 4 == 0 && c_year % 100 != 0)
+	if ((c_year % 4 == 0 && c_year % 100 != 0) || c_year % 400 == 0)
 	{
 		return 1;
 	}
@@ -324,11 +324,22 @@ bool Date::MonthCheck(int month)
 
 std::istream& operator>>(std::istream& os, Date& dt) {
 
-	os >> dt.c_day;
-	os.ignore();
-	os >> dt.c_month;
-	os.ignore();
-	os >> dt.c_year;
+	while (true)
+	{
+		os >> dt.c_day;
+		if (os.fail())
+		{
+			os.clear();
+			os.ignore(32767, '\n');
+			dt.c_day = 0;
+			break;
+		}
+		os.ignore();
+		os >> dt.c_month;
+		os.ignore();
+		os >> dt.c_year;
+		break;
+	}
 	return os;
 }
 

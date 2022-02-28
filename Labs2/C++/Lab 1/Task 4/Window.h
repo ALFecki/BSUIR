@@ -6,6 +6,7 @@
 #include <qfiledialog.h>
 #include "ui_QDialog.h"
 #include "ui_Delete_form.h"
+#include "ui_Warning.h"
 
 
 
@@ -36,6 +37,7 @@ private:
 
 	Ui::WindowClass ui;
 	Ui::Form1 del_ui;
-	QWidget* dialog,* del_dialog;
+	Ui::Warning warning_ui;
+	QWidget* dialog,* del_dialog, * warning_dialog;
 	Ui::Form form_ui;
 };

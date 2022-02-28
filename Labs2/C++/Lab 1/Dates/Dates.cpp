@@ -13,8 +13,8 @@ Dates::Dates(QWidget* parent)
 	ui.tableWidget->setHorizontalHeaderLabels(lst);
 	/*QIntValidator* validator = new QIntValidator(0,3,parent);
 	ui.lineEdit->setValidator(validator);*/
-	ui.lineEdit->setInputMask("9D.BD.000D");
-	ui.lineEdit_2->setInputMask("9D.BD.000D");
+	ui.lineEdit->setInputMask("9D.BD.0000");
+	ui.lineEdit_2->setInputMask("9D.BD.0000");
 	connect(ui.lineEdit, &QLineEdit::returnPressed, this, &Dates::on_lineEdit);
 	connect(ui.pushButton_7, &QPushButton::clicked, ui.lineEdit, &QLineEdit::clear);
 }
@@ -75,6 +75,11 @@ void Dates::on_pushButton_clicked() // set new date
 		ui.tableWidget->insertRow(date_size);
 		g_dt = AddMemory(g_dt, date_size);
 		file >> g_dt[date_size];
+		if (g_dt[date_size].c_day == 0 )
+		{
+			ui.tableWidget->removeRow(date_size);
+			return;
+		}
 		g_dt[date_size].isValid();
 		ui.tableWidget->setItem(date_size, 0, (g_dt[date_size]).PrintDate());
 	}

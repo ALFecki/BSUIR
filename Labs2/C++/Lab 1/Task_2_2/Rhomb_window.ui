@@ -16,78 +16,34 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>21</width>
-     <height>181</height>
+     <x>71</x>
+     <y>78</y>
+     <width>125</width>
+     <height>141</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>X1:</string>
+       <string>    Vertical diagonal:</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>X2:</string>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>X3:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>X4:</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>50</y>
-     <width>21</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>Y1:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>Y2:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Y3:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_8">
-      <property name="text">
-       <string>Y4:</string>
+       <string>Horizontal diagonal:</string>
       </property>
      </widget>
     </item>
@@ -96,10 +52,10 @@
   <widget class="QWidget" name="verticalLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>50</y>
-     <width>91</width>
-     <height>191</height>
+     <x>199</x>
+     <y>62</y>
+     <width>111</width>
+     <height>181</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -108,36 +64,6 @@
     </item>
     <item>
      <widget class="QLineEdit" name="lineEdit_2"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_3"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_4"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_4">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>50</y>
-     <width>91</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <widget class="QLineEdit" name="lineEdit_5"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_6"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_7"/>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_8"/>
     </item>
    </layout>
   </widget>

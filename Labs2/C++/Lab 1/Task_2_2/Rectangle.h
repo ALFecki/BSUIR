@@ -28,3 +28,12 @@ public:
 	Square(int, double);
 };
 
+
+//class Rhombus : public Square
+//{
+//public:
+//	Rhombus(int width, double rot_angle = 45)
+//	{
+//		Square(width, rot_angle);
+//	}
+//};

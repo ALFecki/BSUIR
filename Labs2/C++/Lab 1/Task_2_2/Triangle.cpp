@@ -24,6 +24,7 @@ inline void Triangle::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
 		painter->scale(size, size);
 	}
 
+	painter->drawPoint(boundingRect().center());
 	painter->drawPolygon(pol);
 	QTimer::singleShot(0, this, SLOT(update()));
 
