@@ -115,7 +115,7 @@ QRectF Trapezoid::boundingRect() const
 
 QString Trapezoid::infoAboutTrapezoid()
 {
-	int area = (abs(x2 - x1) + abs(x2 - x1 - 60)) / 2 * (y2 - y1), perimetr = (abs(x2 - x1) + abs(x2 - x1 - 60)) * 2;
+	int area = (abs(x2 - x1) + abs(x2 - x1 - 60)) / 2 * abs(y2 - y1), perimetr = (abs(x2 - x1) + abs(x2 - x1 - 60)) * 2;
 	double x = abs(x2 - x1) / 2, y = abs(y2 - y1) / 2;
 	return QString("Area: %1, Perimetr: %2, Center: (%3,%4)").arg(area).arg(perimetr).arg(x).arg(y);
 }
