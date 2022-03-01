@@ -4,23 +4,23 @@ bool Menu()
 {
     Console.WriteLine("====== MENU ======");
     Console.WriteLine("1 - Enter new number");
-    Console.WriteLine("2 - Exit");
-    char sw = Convert.ToChar(Console.Read());
+    Console.WriteLine("2 - Exit\n");
+    Console.Write("Choose your variant: ");
+    int sw = int.Parse(Console.ReadLine());
 
     switch (sw)
     {
-        case '1':
-
-            Console.WriteLine("Enter the number: ");
+        case 1:
+            Console.Write("Enter the number: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            if (isEven(number)) Console.WriteLine("Number is even");
-            else Console.WriteLine("Number isn't even");
-            break;
-        case '2':
+            if (isEven(number)) Console.WriteLine("\nNumber is even\n");
+            else Console.WriteLine("\nNumber isn't even\n");
+            return true;
+        case 2:
             return false;
         default:
-            Console.WriteLine("Incorrect input! Try again");
-            return false;
+            Console.WriteLine("\n\nIncorrect input! Try again");
+            return true;
     }
 
 }
@@ -28,8 +28,8 @@ bool Menu()
 
 bool isEven(int c)
 {
-    if(c % 2 == 0) return true;
-    else return false;
+    return c % 2 == 0;
 }
 
 
+while (Menu()) { }
