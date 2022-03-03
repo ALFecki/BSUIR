@@ -1,4 +1,3 @@
-*.sln
 Debug/
 x64/
 *.vcxproj
