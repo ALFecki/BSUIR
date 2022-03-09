@@ -36,14 +36,14 @@ class Belonging
             Console.WriteLine("\nNO\n");
             return;
         }
-        if (Math.Pow(x, 2) + Math.Pow(y, 2) > 25 && Math.Pow(x, 2) + Math.Pow(y, 2) < 100)
-        {
-            Console.WriteLine("\nYES\n");
-            return;
-        }
-        else if (Math.Pow(x, 2) + Math.Pow(y, 2) == 25 || Math.Pow(x, 2) + Math.Pow(y, 2) == 100 || y == 0)
+        else if ((Math.Pow(x, 2) + Math.Pow(y, 2) == 25) || (Math.Pow(x, 2) + Math.Pow(y, 2) == 100) || y == 0)
         {
             Console.WriteLine("\nON THE BOARD\n");
+            return;
+        }
+        else if (Math.Pow(x, 2) + Math.Pow(y, 2) > 25 && Math.Pow(x, 2) + Math.Pow(y, 2) < 100)
+        {
+            Console.WriteLine("\nYES\n");
             return;
         }
         else
