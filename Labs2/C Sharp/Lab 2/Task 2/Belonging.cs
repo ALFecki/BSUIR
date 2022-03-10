@@ -1,7 +1,7 @@
 ﻿//variant 4
 
 
-class Belonging
+public class Belonging
 {
     public bool Menu()
     {
@@ -29,27 +29,27 @@ class Belonging
     }
 
 
-    public void isInArea(int x, int y)
+    public int isInArea(int x, int y)
     {
         if (y < 0)
         {
             Console.WriteLine("\nNO\n");
-            return;
+            return 0;
         }
         else if ((Math.Pow(x, 2) + Math.Pow(y, 2) == 25) || (Math.Pow(x, 2) + Math.Pow(y, 2) == 100) || y == 0)
         {
             Console.WriteLine("\nON THE BOARD\n");
-            return;
+            return 2;
         }
         else if (Math.Pow(x, 2) + Math.Pow(y, 2) > 25 && Math.Pow(x, 2) + Math.Pow(y, 2) < 100)
         {
             Console.WriteLine("\nYES\n");
-            return;
+            return 1;
         }
         else
         {
             Console.WriteLine("\nNO\n");
-            return;
+            return 0;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿class Number
+﻿public class Number
 {
     public bool Menu()
     {
