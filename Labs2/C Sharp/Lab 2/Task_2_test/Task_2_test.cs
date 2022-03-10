@@ -25,5 +25,14 @@ namespace Task_2_test
             int actual = belonging.isInArea(x, y);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+
+        public void IsInArea_x11_y12_0returned()
+        {
+            int x = 11, y = 12, expected = 0;
+            Belonging belonging = new Belonging();
+            int actual = belonging.isInArea(x, y);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
