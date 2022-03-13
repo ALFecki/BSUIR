@@ -3,6 +3,6 @@
 template <typename Type>
 bool My_weak_ptr<Type>::expired() const
 {
-	return cpointer->shared_count > 0;
+	return cpointer->shared_count == 0;
 }
 
