@@ -1,105 +1,150 @@
 #pragma once
-
 #include "unique_ptr.h"
+
+
+template <class Type>
+class My_weak_ptr;
+
+
+struct CBlock
+{
+	int* shared_count = nullptr;
+	int* weak_count = nullptr;
+	CBlock(int a, int b)
+	{
+		shared_count = new int(a);
+		weak_count = new int(b);
+	}
+	//~CBlock()
+	//{
+	//	delete weak_count;
+	//	delete shared_count;
+	//}
+};
 
 template <typename Type>
 class My_shared_ptr
 {
-
 private:
 
-	template <typename Type>
-	struct CBlock {
-		int shared_count;
-		int weak_count;
-		Type object;
-	};
+	Type* object_ptr = nullptr;
+	CBlock* c_block_ptr = nullptr;
 
-	Type* pointer;
-	int* count;
-	CBlock<Type>* cpointer = nullptr;
-
-	struct make_shared_t;
-
-	template <typename Type> // private constructor with CBlock
-	My_shared_ptr(make_shared_t, CBlock<Type>* storage_ptr)
-		: cpointer(storage_ptr) {}
+	template <typename Type, typename... Args>
+	friend My_shared_ptr<Type> make_shared_ptr(Args&&... args);
 
 public:
+
 	My_shared_ptr() {}
-	
-	My_shared_ptr(Type* pointer = nullptr)
-		: pointer(pointer), count(new int(1)) {}
-	
-	My_shared_ptr(const My_shared_ptr& new_pointer)
-		: pointer(new_pointer.pointer), count(new_pointer.count)
+
+	My_shared_ptr(Type* other_ptr)
+		: object_ptr(other_ptr)
 	{
-		if (!pointer)
-		{
-			return;
-		}
-		++(*count);
-	}
-	
-	My_shared_ptr(My_shared_ptr&& new_pointer)
-		: pointer(new_pointer.pointer), count(new_pointer.count)
-	{
-		new_pointer.pointer = nullptr;
-		new_pointer.count = nullptr;
+		c_block_ptr = new CBlock(1, 0);
 	}
 
-	int get_count() const
+	My_shared_ptr(const My_shared_ptr& new_pointer)
 	{
-		return *count;
+		this->~My_shared_ptr();
+		c_block_ptr = new_pointer.c_block_ptr;
+		object_ptr = new_pointer.object_ptr;
+		*(c_block_ptr->shared_count) += 1;
 	}
-	
-	void operator=(My_shared_ptr& new_pointer) const
+
+	My_shared_ptr(My_weak_ptr<Type> weak_ptr)
 	{
-		delete pointer;
-		pointer = new_pointer.pointer;
-		new_pointer.pointer = nullptr;
+		c_block_ptr = weak_ptr.c_block_ptr;
+		object_ptr = weak_ptr.object_ptr;
+
+		(*(c_block_ptr->shared_count))++;
+	}
+
+
+	My_shared_ptr(My_shared_ptr&& new_pointer)
+		: c_block_ptr(new_pointer.c_block_ptr), object_ptr(new_pointer.object_ptr)
+	{
+		new_pointer.object_ptr = nullptr;
+		new_pointer.c_block_ptr = nullptr;
+	}
+
+	My_shared_ptr operator=(const My_shared_ptr& new_pointer)
+	{
+		this->~My_shared_ptr();
+		c_block_ptr(new_pointer.c_block_ptr);
+		object_ptr(new_pointer.object_ptr);
+		*(c_block_ptr->shared_count) += 1;
+		return *c_block_ptr;
+	}
+	My_shared_ptr operator=(const My_shared_ptr&& new_pointer)
+	{
+		this->~My_shared_ptr();
+		c_block_ptr(new_pointer.c_block_ptr);
+		object_ptr(new_pointer.object_ptr);
+		new_pointer.object_ptr = nullptr;
+		new_pointer.c_block_ptr = nullptr;
+		return *c_block_ptr;
 	}
 	Type& operator*() const
 	{
-		assert(pointer);
-		return *pointer;
+		assert(object_ptr);
+		return *object_ptr;
 	}
 	Type* operator->() const
 	{
-		assert(pointer);
-		return pointer;
+		assert(object_ptr);
+		return object_ptr;
+	}
+	explicit operator bool()
+	{
+		return this->get() != nullptr;
+	}
+
+	Type* get()
+	{
+		return object_ptr;
+	}
+	int get_count() const
+	{
+		return *(c_block_ptr->shared_count);
+	}
+	void reset(Type* new_obj)
+	{
+		this->~My_shared_ptr();
+		*this = My_shared_ptr<Type>(new_obj);
 	}
 
 
 	~My_shared_ptr()
 	{
-		cpointer->shared_count -= 1;
-
-		if (cpointer->shared_count > 0)
+		if (c_block_ptr == nullptr)
 		{
 			return;
 		}
-		if (cpointer->weak_count == 0)
+		(*(c_block_ptr->shared_count))--;
+		if (*(c_block_ptr->shared_count) == 0 && *(c_block_ptr->weak_count) == 0)
 		{
-			delete cpointer;
-			return;
+			delete c_block_ptr->shared_count;
+			delete c_block_ptr->weak_count;
+			delete c_block_ptr;
+			delete object_ptr;
+		}
+		else if (*(c_block_ptr->shared_count) == 0)
+		{
+			delete object_ptr;
 		}
 
-		cpointer->object.~Type();
+		object_ptr = nullptr;
+		c_block_ptr = nullptr;
 	}
-	
-	
-	template <typename OType, typename... Args>
-	friend My_shared_ptr<OType> make_shared_ptr(Args&&... args);
 
+	friend class My_weak_ptr<Type>;
 
 };
 
 template <typename Type, typename... Args>
 My_shared_ptr<Type> make_shared_ptr(Args&&... args)
 {
-	auto pointer = new My_shared_ptr::CBlock<Type>(1, std::forward<Args>(args)...);
-	return My_shared_ptr<Type>(pointer);
+	return My_shared_ptr<Type>(new Type(std::forward<Args>(args)...));
 }
 
 

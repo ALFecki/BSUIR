@@ -14,7 +14,7 @@ public:
 		: pointer(pointer) {}
 
 	My_unique_ptr(My_unique_ptr& new_pointer)
-		: pointer(new_pointer)
+		: pointer(new_pointer.pointer)
 	{
 		new_pointer.pointer = nullptr;
 	}
