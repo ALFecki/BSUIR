@@ -15,11 +15,6 @@ struct CBlock
 		shared_count = new int(a);
 		weak_count = new int(b);
 	}
-	//~CBlock()
-	//{
-	//	delete weak_count;
-	//	delete shared_count;
-	//}
 };
 
 template <typename Type>
@@ -67,22 +62,29 @@ public:
 		new_pointer.c_block_ptr = nullptr;
 	}
 
+	My_shared_ptr(My_unique_ptr<Type>&& new_pointer)
+	{
+		*this = new_pointer.release();
+	}
+
 	My_shared_ptr operator=(const My_shared_ptr& new_pointer)
 	{
 		this->~My_shared_ptr();
-		c_block_ptr(new_pointer.c_block_ptr);
-		object_ptr(new_pointer.object_ptr);
-		*(c_block_ptr->shared_count) += 1;
-		return *c_block_ptr;
+		c_block_ptr = new_pointer.c_block_ptr;
+		object_ptr = new_pointer.object_ptr;
+		(*(c_block_ptr->shared_count))++;
+		return *this;
 	}
-	My_shared_ptr operator=(const My_shared_ptr&& new_pointer)
+
+
+	My_shared_ptr operator=(My_shared_ptr&& new_pointer)
 	{
 		this->~My_shared_ptr();
-		c_block_ptr(new_pointer.c_block_ptr);
-		object_ptr(new_pointer.object_ptr);
+		c_block_ptr = new_pointer.c_block_ptr;
+		object_ptr = new_pointer.object_ptr;
 		new_pointer.object_ptr = nullptr;
 		new_pointer.c_block_ptr = nullptr;
-		return *c_block_ptr;
+		return *this;
 	}
 	Type& operator*() const
 	{

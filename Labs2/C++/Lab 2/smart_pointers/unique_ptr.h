@@ -6,6 +6,8 @@
 template <class Type>
 class My_unique_ptr
 {
+private:
+	Type* pointer;
 
 public:
 	My_unique_ptr() {}
@@ -13,11 +15,14 @@ public:
 	My_unique_ptr(Type* pointer)
 		: pointer(pointer) {}
 
-	My_unique_ptr(My_unique_ptr& new_pointer)
+	My_unique_ptr(My_unique_ptr&& new_pointer)
 		: pointer(new_pointer.pointer)
 	{
 		new_pointer.pointer = nullptr;
 	}
+
+	My_unique_ptr(const My_unique_ptr&) = delete;
+	My_unique_ptr& operator=(const My_unique_ptr&) = delete;
 
 	Type* get()
 	{
@@ -50,7 +55,7 @@ public:
 		return this->get() != nullptr;
 	}
 	
-	My_unique_ptr operator=(My_unique_ptr&& new_pointer)
+	My_unique_ptr operator=(My_unique_ptr&& new_pointer) noexcept	
 	{
 		delete pointer;
 		pointer = new_pointer.pointer;
@@ -75,12 +80,10 @@ public:
 		delete pointer;
 	}
 
-
 	template <typename OType, typename... Args>
 	friend My_unique_ptr<OType> make_unique_ptr(Args&&... args);
 
-private:
-	Type* pointer;
+
 };
 
 

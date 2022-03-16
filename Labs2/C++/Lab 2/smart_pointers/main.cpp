@@ -2,42 +2,62 @@
 #include "unique_ptr.h"
 #include "shared_ptr.h"
 
-class Item
-{
-public:
-	Item() { std::cout << "Item acquired\n"; }
-	~Item() { std::cout << "Item destroyed\n"; }
-};
 
-int main()
-{
-	// Выделяем Item и передаем его в std::shared_ptr
-	auto ptr1 = make_shared_ptr<Item>();
-	{
-		auto ptr2 = ptr1; // создаем ptr2 из ptr1, используя семантику копирования
-
-		std::cout << "Killing one shared pointer\n";
-	} // ptr2 выходит из области видимости здесь, но ничего больше не происходит
-
-	std::cout << "Killing another shared pointer\n";
-
-	return 0;
-} // ptr1 выходит из области видимости здесь, и выделенный Item также уничтожается здесь
-
-
-
-
-
-
+//class Item // testing shared_ptr
+//{
+//public:
+//	Item() { std::cout << "Item acquired\n"; }
+//	~Item() { std::cout << "Item destroyed\n"; }
+//};
+//
+//int main()
+//{
+//	// Выделяем Item и передаем его в std::shared_ptr
+//	Item* item = new Item;
+//	My_shared_ptr<Item> ptr1(item);
+//	{
+//		My_shared_ptr<Item> ptr2(ptr1); // используем копирующую инициализацию для создания второго std::shared_ptr из ptr1, указывающего на тот же Item
+//
+//		std::cout << "Killing one shared pointer\n";
+//	} // ptr2 выходит из области видимости здесь, но больше ничего не происходит
+//
+//	std::cout << "Killing another shared pointer\n";
+//
+//	return 0;
+//} // ptr1 выходит из области видимости здесь, и выделенный Item уничтожается также здесь
+//
+//
 
 
 
 
 
+//class Item // testing make_shared_ptr
+//{
+//public:
+//	Item() { std::cout << "Item acquired\n"; }
+//	~Item() { std::cout << "Item destroyed\n"; }
+//};
+//
+//int main()
+//{
+//	// Выделяем Item и передаем его в std::shared_ptr
+//	auto ptr1 = make_shared_ptr<Item>();
+//	{
+//		auto ptr2 = ptr1; // создаем ptr2 из ptr1, используя семантику копирования
+//
+//		std::cout << "Killing one shared pointer\n";
+//	} // ptr2 выходит из области видимости здесь, но ничего больше не происходит
+//
+//	std::cout << "Killing another shared pointer\n";
+//
+//	return 0;
+//} // ptr1 выходит из области видимости здесь, и выделенный Item также уничтожается здесь
+//
 
 
 
-//class Item
+//class Item // testing make_unique_ptr
 //{
 //public:
 //	Item() { std::cout << "Item acquired\n"; }
@@ -73,19 +93,7 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//class Human
+//class Human // testing weak_ptr
 //{
 //	std::string m_name;
 //	My_weak_ptr<Human> m_partner; // обратите внимание, здесь std::weak_ptr
@@ -114,7 +122,11 @@ int main()
 //		return true;
 //	}
 //
-//	const My_shared_ptr<Human> getPartner() const { return m_partner.lock(); } // используем метод lock() для конвертации std::weak_ptr в std::shared_ptr
+//	const My_shared_ptr<Human> getPartner() const 
+//	{
+//		return m_partner.lock(); 
+//	} 
+//	// используем метод lock() для конвертации std::weak_ptr в std::shared_ptr
 //	const std::string& getName() const { return m_name; }
 //};
 //

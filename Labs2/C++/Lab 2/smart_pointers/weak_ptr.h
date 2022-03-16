@@ -66,5 +66,10 @@ public:
 		}
 	}
 
+	Type* get()
+	{
+		return object_ptr;
+	}
+
 	friend class My_shared_ptr<Type>;
 };
