@@ -8,6 +8,7 @@ while (true)
     if (num > 999 || num < 100)
     {
         Console.Write("\nIncorrect input. Try again.\n");
+        continue;
     }
     else break;
 }

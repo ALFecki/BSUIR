@@ -26,7 +26,7 @@ namespace Task_3_tests
         public void TestGetDaysSpan()
         {
             string[] dates = { "18.03.2022", "29.03.2022" };
-            int[] expected = { 1, 10 };
+            int[] expected = { 4, 7 };
 
             DateService daySpan = new DateService();    
             for (int i = 0; i < 2; i++)
