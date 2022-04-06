@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_1_test", "Task_1_test\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_2_test", "Task_2_test\Task_2_test.csproj", "{83752C75-8111-4728-BD89-C4BC47217BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_3_tests", "Task_3_tests\Task_3_tests.csproj", "{CAD78076-F063-4B34-BE9A-56D6DD32EEBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_3_tests", "Task_3_tests\Task_3_tests.csproj", "{CAD78076-F063-4B34-BE9A-56D6DD32EEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{EFAEA342-3C0A-4C3C-BD60-C54CAE708A9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{CAD78076-F063-4B34-BE9A-56D6DD32EEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAD78076-F063-4B34-BE9A-56D6DD32EEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAD78076-F063-4B34-BE9A-56D6DD32EEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAEA342-3C0A-4C3C-BD60-C54CAE708A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAEA342-3C0A-4C3C-BD60-C54CAE708A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAEA342-3C0A-4C3C-BD60-C54CAE708A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAEA342-3C0A-4C3C-BD60-C54CAE708A9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
