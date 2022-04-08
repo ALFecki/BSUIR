@@ -34,6 +34,31 @@ namespace Test_TV
             OnlineStore store = OnlineStore.getInstance("OZON");
             int[] prices = { 100, 200, 300, 400, 500 };
             int[] sold = { 1, 2, 3, 4, 5 };
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+            
             int[] expected = { 100, 400, 900, 1600, 2500 };
             for (int i = 0; i < 5; i++)
             {
