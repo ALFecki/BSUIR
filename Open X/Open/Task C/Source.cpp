@@ -29,6 +29,25 @@ int main()
 		}
 		for (long long i = 0; i <= N; i++)
 		{
+			std::string temp = std::to_string(i);
+			if (temp[0] == '1')
+			{
+				i *= 3;
+				continue;
+			}
+			bool is_fib_2 = false;
+			for (int y = 0; y < temp.size(); y++)
+			{
+				if (temp[y] == '1' || temp[y] == '2' || temp[y] == '3' || temp[y] == '5' || temp[y] == '8')
+				{
+					is_fib_2 = true;
+					break;
+				}
+			}
+			if (is_fib_2)
+			{
+				continue;
+			}
 			is_fib_1 = true;
 			for (int j = 0; j < fib_nums.size() && is_fib_1; j++)
 			{
@@ -42,7 +61,7 @@ int main()
 				for (int k = 0, l = 0; k < temp.size(); k++)
 				{
 					//is_fib = false;
-					//if ((l != 0 && l == temp_fib.size() - 1) || l == 1 && l == temp_fib.size()) // 1 2 3 5 8 13 21 34 55 89 144 233 377
+					//if ((l != 0 && l == temp_fib.size() - 1) || l == 1 && l == temp_fib.size()) // 0 1 2 3 5 8 13 21 34 55 89 144 233 377
 					//{
 					//	is_fib_1 = false;
 					//	break;
