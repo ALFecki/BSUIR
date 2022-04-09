@@ -1,38 +1,52 @@
 #include <iostream>
-
+#include <vector>
+#include <cmath>
 
 int main()
 {
-	int N, minutes = 0;
-	long* K, *A;
+	int N, pasture, sheep, minutes = 0;
+	std::vector<long long> K;
+	long sum_of_pastures = 0, num_of_sheeps = 0;
 	std::cin >> N;
-	K = new long[N];
-	A = new long[N];
-	long sum_of_sheeps = 0, sum_of_pasture = 0;
 	for (int i = 0; i < N; i++)
 	{
-		std::cin >> K[i] >> A[i];
-		sum_of_pasture += K[i];
-		sum_of_sheeps += A[i] * K[i];
-	}
-	long** array = new long*[sum_of_pasture];
-	for (int i = 0; i < sum_of_pasture; i++) // array of pastures
-	{
-		array[i] = new long[2];
-		array[i][0] = i;
-		int counter = 0;
-		while (counter != K[i])
+		std::cin >> pasture;
+		sum_of_pastures += pasture;
+		std::cin >> sheep;
+		num_of_sheeps += sheep * pasture;
+		for (int j = 0; j < pasture; j++)
 		{
-			int j = i;
-			array[j][1] = A[i];
-			j++; counter++;
+			K.push_back(sheep);
 		}
 	}
-	int count = sum_of_sheeps / sum_of_pasture;
-	for (int i = sum_of_pasture - 1; i >= 0; i--)
+	long count = num_of_sheeps / sum_of_pastures;
+	if (K[0] > K[K.size() - 1])
 	{
 
-	}
-	          
 
+		for (int j = K.size() - 1; j >= 0; j--)
+		{
+
+			while (K[j] < count && K[0] != 1)
+			{
+				K[j - 1]--;
+				K[j]++;
+				minutes++;
+			}
+		}
+	}
+	else
+	{
+		for (int j = 0; j < K.size(); j++)
+		{
+
+			while (K[j] < count && K[K.size() - 1] != 0)
+			{
+				K[j + 1]--;
+				K[j]++;
+				minutes++;
+			}
+		}
+	}
+	std::cout << minutes % (static_cast<int>(pow(10, 9)) + 7);
 }
