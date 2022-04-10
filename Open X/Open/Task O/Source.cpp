@@ -10,13 +10,14 @@ int main()
 	long long number;
 	std::cin >> size_of_array >> number;
 	std::vector<int> array_of_number;
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < size_of_array; i++)
 	{
-
+		std::cin >> array_of_number[i];
 	}
-	
-	
-	
 	std::sort(array_of_number.begin(), array_of_number.end());
+
+	
+	
+	
 
 }
