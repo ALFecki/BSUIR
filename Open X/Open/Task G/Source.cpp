@@ -48,5 +48,5 @@ int main()
 			}
 		}
 	}
-	std::cout << minutes % (static_cast<int>(pow(10, 9)) + 7);
+	std::cout << minutes % (static_cast<long>(pow(10, 9)) + 7);
 }
