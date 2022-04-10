@@ -10,7 +10,7 @@ int main()
 	long long number;
 	long long minimum= 10000000000, index;
 	std::cin >> size_of_array >> number;
-	std::vector<long long> array_of_number;
+	std::vector<long long> array_of_number, array_of_number_copy;
 	long radius, radius1;
 	for (long i = 0; i < size_of_array; i++)
 	{
@@ -18,6 +18,7 @@ int main()
 		std::cin >> temp;
 		array_of_number.push_back(temp);
 	}
+	array_of_number_copy = array_of_number;
 	std::sort(array_of_number.begin(), array_of_number.end());
 	for (long i = 0; i < size_of_array; i++)
 	{
@@ -44,9 +45,14 @@ int main()
 	}
 	long size = radius * 2 + 1;
 	std::cout << size << std::endl;
-	for (long i = index - radius; i <= index + radius; i++)
+	
+	for (long i = 0, count = index - radius; i < size_of_array; i++)
 	{
-		std::cout << i + 1 << ' ';
+		if (array_of_number_copy[i] == array_of_number[count] && count <= index + radius)
+		{
+			std::cout << i << ' ';
+			count++;
+		}
 	}
 	
 
