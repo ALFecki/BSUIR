@@ -11,22 +11,40 @@ int main()
 	long long minimum= 10000000000, index;
 	std::cin >> size_of_array >> number;
 	std::vector<long long> array_of_number;
+	long radius, radius1;
 	for (long i = 0; i < size_of_array; i++)
 	{
 		long long temp;
 		std::cin >> temp;
 		array_of_number.push_back(temp);
+	}
+	std::sort(array_of_number.begin(), array_of_number.end());
+	for (long i = 0; i < size_of_array; i++)
+	{
+		std::cout << array_of_number[i] << ' ';
+	}
+	std::cout << std::endl;
+	for (long i = 0; i < size_of_array; i++)
+	{
 		if (abs(array_of_number[i] - number) < minimum)
 		{
 			minimum = abs(array_of_number[i] - number);
 			index = i;
+			radius = std::min(index, size_of_array - 1 - index);
+		}
+		else if (abs(array_of_number[i] - number) == minimum)
+		{
+			radius1 = std::min(i, size_of_array - 1 - i);
+			if (radius1 > radius)
+			{
+				index = i;
+				radius = radius1;
+			}
 		}
 	}
-	std::sort(array_of_number.begin(), array_of_number.end());
-	int radius = std::min((unsigned long long)index - 0, array_of_number.size() - 1 - index);
-	int size = radius * 2 + 1;
+	long size = radius * 2 + 1;
 	std::cout << size << std::endl;
-	for (int i = index - radius; i <= index + radius; i++)
+	for (long i = index - radius; i <= index + radius; i++)
 	{
 		std::cout << i + 1 << ' ';
 	}
