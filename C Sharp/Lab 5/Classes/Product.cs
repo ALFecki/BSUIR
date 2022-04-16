@@ -8,47 +8,52 @@ namespace Classes
 {
     public class Product
     {
-        public string name;
-        public int price;
-        public string Name
+        private string title_;
+        private int price_;
+        public Product(string title, int price)
+        {
+            Title = title;
+            Price = price;
+        }
+        public string Title
         {
             get
             {
-                return Name;
+                return title_;
             }
 
             set
             {
                 if (value == null)
                 {
-                    Name = "Cucumber";
+                    title_ = "Cucumber";
                     return;
                 }
-                Name = value;
+                title_ = value;
             }
         }
         public int Price
         {
             get
             {
-                return Price;
+                return price_;
             }
 
             set
             {
                 if (value < 0)
                 {
-                    Price = 10;
+                    price_ = 10;
                     return;
                 }
-                Price = value;
+                price_ = value;
             }
         }
 
         Product() 
         {
-            name = "Cucumber";
-            price = 10;
+            title_ = "Cucumber";
+            price_ = 10;
         }
         
     }
