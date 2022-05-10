@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Triangle
+﻿namespace Triangle_1
 {
     public class Triangle
     {
@@ -12,7 +6,7 @@ namespace Triangle
 
         private double A, B, C;
 
-        private double a
+        public double a
         {
             get
             {
@@ -24,7 +18,7 @@ namespace Triangle
             }
         }
 
-        private double b
+        public double b
         {
             get
             {
@@ -36,7 +30,7 @@ namespace Triangle
             }
         }
 
-        private double c
+        public double c
         {
             get
             {
@@ -130,50 +124,34 @@ namespace Triangle
 
         public static Triangle operator ++(Triangle temp)
         {
-            temp.A++;
-            temp.B++;
-            temp.C++;
-            return temp;
+            return new Triangle(temp.a + 1, temp.b + 1, temp.c + 1);
         }
 
         public static Triangle operator --(Triangle temp)
         {
-            temp.A--;
-            temp.B--;
-            temp.C--;
+            temp = new Triangle(temp.a - 1, temp.b - 1, temp.c - 1);
             return temp;
         }
 
         public static Triangle operator +(Triangle temp, double value)
         {
-            temp.A += value;
-            temp.B += value;
-            temp.C += value;
-            return temp;
+            return new Triangle(temp.a + value, temp.b + value, temp.c + value);
         }
 
         public static Triangle operator -(Triangle temp, double value)
         {
-            temp.A -= value;
-            temp.B -= value;
-            temp.C -= value;
-            return temp;
+            return new Triangle(temp.a - value, temp.b - value, temp.c - value);
         }
 
         public static Triangle operator *(Triangle temp, double value)
         {
-            temp.A *= value;
-            temp.B *= value;
-            temp.C *= value;
-            return temp;
+
+            return new Triangle(temp.a * value, temp.b * value, temp.c * value);
         }
 
         public static Triangle operator /(Triangle temp, double value)
         {
-            temp.A /= value;
-            temp.B /= value;
-            temp.C /= value;
-            return temp;
+            return new Triangle(temp.a / value, temp.b / value, temp.c / value);
         }
 
         public static bool operator ==(Triangle temp1, Triangle temp2)
