@@ -44,85 +44,124 @@ namespace Store
             this.products = products;
         }
 
-        public void AddProduct(Product product)
+        public void AddDiscountProduct(string name, double price, double discount)
         {
-            this.products.Add(product);
+            this.products.Add(new Product(name, new Discount(price, discount)));
         }
+
+        public void AddProduct(string name, double price)
+        {
+            this.products.Add(new Product(name, new NoDiscount(price)));
+        }
+
+        public double GetTotalPrice()
+        {
+            double totalPrice = 0;
+            foreach (var product in this.products)
+            {
+                totalPrice += product.Price.getPrice();
+            }
+            return Math.Round(totalPrice, 3);
+        }
+
+
+        public void Print()
+        {
+            Console.WriteLine("Store: {0}", this.Name);
+            Console.WriteLine("Products:");
+            foreach (var product in this.products)
+            {
+                Console.WriteLine("{0} {1}", product.Name, Math.Round(product.Price.getPrice(), 3));
+            }
+        }
+
+        public Product GetProduct(string name)
+        {
+            foreach (var product in this.products)
+            {
+                if (product.Name == name)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
+
     }
-
-    public class Product
-    {
-        private string name;
-        private IPrice price;
-
-        public string Name
+        public class Product
         {
-            get
+            private string name;
+            private IPrice price;
+
+            public string Name
             {
-                return this.name;
+                get
+                {
+                    return this.name;
+                }
+                set
+                {
+                    this.name = value;
+                }
             }
-            set
+
+            public IPrice Price
             {
-                this.name = value;
+                get
+                {
+                    return this.price;
+                }
+                set
+                {
+                    this.price = value;
+                }
             }
+
+
+            public Product(string name, IPrice price)
+            {
+                this.Name = name;
+                this.Price = price;
+            }
+
         }
 
-        public IPrice Price
+        public interface IPrice
         {
-            get
+            double getPrice();
+        }
+
+        class NoDiscount : IPrice
+        {
+            private double price;
+
+            public NoDiscount(double price)
+            {
+                this.price = price;
+            }
+
+            public double getPrice()
             {
                 return this.price;
             }
-            set
+        }
+
+
+        class Discount : IPrice
+        {
+            private double price;
+            private double discount;
+
+            public Discount(double price, double discount)
             {
-                this.price = value;
+                this.price = price;
+                this.discount = discount;
+            }
+
+            public double getPrice()
+            {
+                return this.price - (this.price * this.discount / 100);
             }
         }
-
-
-        public Product(string name, IPrice price)
-        {
-            this.Name = name;
-            this.Price = price;
-        }
-
-    }
-
-    public interface IPrice
-    {
-        double getPrice();
-    }
-
-    class NoDiscount : IPrice
-    {
-        private double price;
-
-        public NoDiscount(double price)
-        {
-            this.price = price;
-        }
-
-        public double getPrice()
-        {
-            return this.price;
-        }
-    }
-
-
-    class Discount : IPrice
-    {
-        private double price;
-        private double discount;
-
-        public Discount(double price, double discount)
-        {
-            this.price = price;
-            this.discount = discount;
-        }
-
-        public double getPrice()
-        {
-            return this.price - (this.price * this.discount / 100);
-        }
-    }
+           
 }
