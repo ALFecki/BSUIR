@@ -21,7 +21,6 @@ void PrintTariffes(DoublyLinked<Tariff> tariffes) {
 }
 
 void AddClient(DoublyLinked<Client> clients, DoublyLinked<Tariff> tariffes) {
-    PrintClients(clients);
     Console.WriteLine("Введите имя клиента");
     string name = Console.ReadLine();
     PrintTariffes(tariffes);
