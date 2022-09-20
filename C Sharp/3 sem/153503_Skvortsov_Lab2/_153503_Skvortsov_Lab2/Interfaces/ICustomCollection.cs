@@ -9,5 +9,7 @@
         public void Remove(T item);
         public T RemoveCurrent();
 
+
+
     }
 }

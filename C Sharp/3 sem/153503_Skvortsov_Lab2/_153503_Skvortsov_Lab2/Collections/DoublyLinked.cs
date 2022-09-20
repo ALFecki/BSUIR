@@ -112,6 +112,7 @@ namespace _153503_Skvortsov_Lab1.Collections {
                 }
                 current = current.Next;
             }
+            throw new NoSuchItemException();
         }
 
         public T RemoveCurrent() {
@@ -122,6 +123,14 @@ namespace _153503_Skvortsov_Lab1.Collections {
             return res;
         }
 
+        public IEnumerable<T>? GetEnumerator() {
+            DoublyNode<T> node = head;
+            while (node != null) {
+                yield return node.Data;
+                node = node.Next;
+            }
+        }
+
         public void Print() {
             current = head;
             for (int i = 0; i < count; i++) {
@@ -129,6 +138,13 @@ namespace _153503_Skvortsov_Lab1.Collections {
                 current = current.Next;
             }
         }
+
+        public sealed class NoSuchItemException : SystemException { 
+            public NoSuchItemException() {
+                Console.WriteLine("No such item in list!");
+            }
+        }
+
     }
 
 }

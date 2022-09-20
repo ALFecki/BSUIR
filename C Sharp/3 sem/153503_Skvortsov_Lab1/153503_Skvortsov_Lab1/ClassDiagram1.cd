@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="_153503_Skvortsov_Lab1.Collections.DoublyLinked&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAgAAABAAADACABAQAgAgAAAAAAAAAAAAEAgA=</HashCode>
+      <FileName>Collections\DoublyLinked.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="head" />
+      <Field Name="current" />
+      <Field Name="tail" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.167" Collapsed="true" />
+  </Class>
+  <Class Name="_153503_Skvortsov_Lab1.Collections.DoublyNode&lt;T&gt;">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAABQAAIAAAA=</HashCode>
+      <FileName>Collections\DoublyNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_153503_Skvortsov_Lab1.Entities.ATS">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAgAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ATS.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="clients" />
+      <Field Name="tariffes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="_153503_Skvortsov_Lab1.Entities.Client">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABQAYAAAAAQAAAAEAABAAAAAQAAAAEA=</HashCode>
+      <FileName>Entities\Client.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="tariff" />
+      <Field Name="callMinutes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="_153503_Skvortsov_Lab1.Entities.Tariff">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABQAAAAUAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Tariff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="_153503_Skvortsov_Lab1.Interfaces.ICustomCollection&lt;T&gt;">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAAAABAAACACABAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICustomCollection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

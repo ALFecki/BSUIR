@@ -6,7 +6,7 @@ using _153503_Skvortsov_Lab1.Entities;
 void PrintClients(DoublyLinked<Client> clients) {
     Console.WriteLine("********СПИСОК КЛИЕНТОВ*********");
     for (int i = 0; i < clients.Count; i++) {
-        
+
         Console.WriteLine("Имя: " + clients[i].Name + " Количество звонков: " + clients[i].CallsNumber.ToString());
     }
     Console.WriteLine("********СПИСОК КЛИЕНТОВ*********");
