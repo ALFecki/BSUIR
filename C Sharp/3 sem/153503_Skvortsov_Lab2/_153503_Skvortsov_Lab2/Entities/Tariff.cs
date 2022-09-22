@@ -1,4 +1,4 @@
-﻿namespace _153503_Skvortsov_Lab1.Entities {
+﻿namespace _153503_Skvortsov_Lab2.Entities {
     public class Tariff {
         private string name;
         private int cost;

@@ -1,39 +1,35 @@
-﻿using _153503_Skvortsov_Lab1.Collections;
+﻿using _153503_Skvortsov_Lab2.Collections;
 
-namespace _153503_Skvortsov_Lab1.Entities {
+namespace _153503_Skvortsov_Lab2.Entities {
     public class Client {
         private string name;
         private int callsNumber;
-        private DoublyLinked<double> callMinutes;
-        private Tariff tariff;
+        private DoublyLinked<double> calls;
 
 
-        public Client(string name, Tariff tariff) {
+        public Client(string name) {
             this.name = name;
-            this.tariff = tariff;
-            this.callMinutes = new DoublyLinked<double>();
+            this.calls = new DoublyLinked<double>();
         }
-        public Client(string name, int callsNumber, double[] callMinutes, Tariff tariff) {
+        public Client(string name, int callsNumber, double[] calls) {
             this.name = name;
             this.callsNumber = callsNumber;
-            this.callMinutes = new DoublyLinked<double>(callMinutes);
-            this.tariff = tariff;
+            this.calls = new DoublyLinked<double>(calls);
         }
 
-        public void RegisterCall(double minutes) {
+        public void RegisterCall(double minutes, Tariff tariff) {
             callsNumber++;
-            Console.WriteLine("minutes " + minutes.ToString());
-            callMinutes.Add(minutes);
+            calls.Add(minutes * tariff.Cost);
         }
 
         public void PrintMinutes() {
-            callMinutes.Print();
+            calls.Print();
         }
 
         public double NeddedMoney() {
             double sum = 0;
             for (int i = 0; i < callsNumber; i++) {
-                sum += callMinutes[i] * tariff.Cost;
+                sum += calls[i];
             }
             return sum;
         }

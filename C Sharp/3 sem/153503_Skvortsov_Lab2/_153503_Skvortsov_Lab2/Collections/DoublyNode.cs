@@ -1,4 +1,4 @@
-﻿namespace _153503_Skvortsov_Lab1.Collections {
+﻿namespace _153503_Skvortsov_Lab2.Collections {
     public class DoublyNode<T> {
         private T data;
         private DoublyNode<T> next;

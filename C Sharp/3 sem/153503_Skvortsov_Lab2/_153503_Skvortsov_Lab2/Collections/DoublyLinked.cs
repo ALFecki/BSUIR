@@ -1,7 +1,9 @@
-﻿using _153503_Skvortsov_Lab1.Interfaces;
+﻿using _153503_Skvortsov_Lab2.Interfaces;
+using System.Collections;
 
-namespace _153503_Skvortsov_Lab1.Collections {
+namespace _153503_Skvortsov_Lab2.Collections {
     public class DoublyLinked<T> : ICustomCollection<T> {
+
         private DoublyNode<T> head;
         private DoublyNode<T> tail;
         private DoublyNode<T> current;
@@ -69,6 +71,10 @@ namespace _153503_Skvortsov_Lab1.Collections {
                 throw new IndexOutOfRangeException();
         }
 
+        public bool HasNext() {
+            return current.Next != null;
+        }
+
         public T Current() {
             return current.Data;
         }
@@ -123,13 +129,17 @@ namespace _153503_Skvortsov_Lab1.Collections {
             return res;
         }
 
-        public IEnumerable<T>? GetEnumerator() {
+        public IEnumerator<T>? GetEnumerator() {
             DoublyNode<T> node = head;
             while (node != null) {
                 yield return node.Data;
                 node = node.Next;
             }
         }
+
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+
+        public void Dispose() { }
 
         public void Print() {
             current = head;
@@ -139,7 +149,7 @@ namespace _153503_Skvortsov_Lab1.Collections {
             }
         }
 
-        public sealed class NoSuchItemException : SystemException { 
+        public sealed class NoSuchItemException : SystemException {
             public NoSuchItemException() {
                 Console.WriteLine("No such item in list!");
             }
