@@ -19,6 +19,8 @@ class Program {
         ATS ats = new ATS();
         journal = new Journal();
 
+        ats.Notify+= journal.Add;// .AddMessage;
+
         ats.RegisterTariff(new Tariff("Standart", 1));
         ats.RegisterTariff(new Tariff("Premium", 2));
         ats.RegisterTariff(new Tariff("VIP", 3));

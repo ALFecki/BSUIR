@@ -4,8 +4,8 @@ namespace _153503_Skvortsov_Lab2.Entities {
     public class ATS {
         private DoublyLinked<Client> clients;
         private DoublyLinked<Tariff> tariffes;
-        delegate void ATSHandler(string message);
-        event ATSHandler Notify;
+        public delegate void ATSHandler(string message);
+        public event ATSHandler Notify;
         Journal journal = new Journal();
 
         
