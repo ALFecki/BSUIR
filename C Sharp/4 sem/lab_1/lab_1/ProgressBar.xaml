@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_1.ProgressBar"
+             Title="ProgressBar"
+             BackgroundColor="#1f2023">
+    <Grid
+        RowDefinitions="50, 550">
+        <Label 
+            x:Name="ResultLabel"
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*,300, *"
+            RowDefinitions="*, 100, 50, 50, *"
+            ColumnSpacing="5">
+
+            <Grid
+                Grid.Column="1"
+                Grid.Row="1"
+                ColumnDefinitions="230,*"
+                ColumnSpacing="20">
+                
+                <ProgressBar
+                    x:Name="BarForIntegral"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    VerticalOptions="Center">
+                
+                </ProgressBar>
+
+                <Label
+                    x:Name="Percentage"
+                    Text="0 %"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalOptions="Center">
+                
+                </Label>
+            </Grid>
+
+            <Grid
+                Grid.Column="1"
+                Grid.Row="2"
+                ColumnDefinitions="150,150"
+                ColumnSpacing="3">
+                <Button
+                    Text="Start"
+                    x:Name="StartButton"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    FontSize="Medium"
+                    Clicked="OnStartButtonClicked"
+                    Style="{StaticResource Numbers}">
+
+                </Button>
+
+                <Button
+                    Text="Cancel"
+                    x:Name="CancelButton"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    FontSize="Medium"
+                    Clicked="OnCancelButtonClicked"
+                    Style="{StaticResource Numbers}">
+
+                </Button>
+            </Grid>
+        </Grid>
+        
+
+        
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_1.MainPage">
+
+    <Grid 
+        ColumnDefinitions="*"
+        ColumnSpacing="5"
+        RowDefinitions="170,50,430"
+        RowSpacing="0"
+        BackgroundColor="#1f2023">
+
+        <Grid
+            x:Name="Labels"
+            Grid.Row="0"
+            ColumnDefinitions="*"
+            BackgroundColor="#1f2023"
+            RowDefinitions="70,100">
+
+            <Label
+                Grid.Row="0"
+                x:Name="Expression"
+                Text="{}"
+                BackgroundColor="#1f2023"
+                TextColor="White"
+                HeightRequest="50"
+                FontSize="Medium"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
+
+            </Label>
+
+            <Label
+                Grid.Row="1"
+                x:Name="Result"
+                Text="0"
+                TextColor="White"
+                HeightRequest="150"
+                FontSize="Header"
+                HorizontalOptions="End"
+                VerticalOptions="Center">
+
+            </Label>
+
+        </Grid>
+
+        <Grid
+            x:Name="Memory"
+            Grid.Row="1"
+            BackgroundColor="#1f2023">
+            <Grid
+                ColumnDefinitions="*,*,*,*,*,*"
+                RowDefinitions="50"
+                BackgroundColor="#1f2023">
+                <Button
+                    Text="MC"
+                    Grid.Column="0"
+                    BorderWidth="0"
+                    FontSize="Small"
+                    Clicked="onMemoryClearClicked"
+                    Style="{StaticResource Memory}">
+
+                </Button>
+
+                <Button
+                    Text="MR"
+                    Grid.Column="1"
+                    BorderWidth="0"
+                    FontSize="Small"
+                    Clicked="onMemoryRecallClicked"
+                    Style="{StaticResource Memory}">
+                    
+
+                </Button>
+
+                <Button
+                    Text="M+"
+                    Grid.Column="2"
+                    BorderWidth="0"
+                    FontSize="Small"
+                    Clicked="onMemoryAddClicked"
+                    Style="{StaticResource Memory}">
+
+                </Button>
+
+                <Button
+                    Text="M-"
+                    Grid.Column="3"
+                    BorderWidth="0"
+                    FontSize="Small"
+                    Clicked="onMemorySubClicked"
+                    Style="{StaticResource Memory}">
+
+                </Button>
+
+                <Button
+                    Text="MS"
+                    Grid.Column="4"
+                    BorderWidth="0"
+                    FontSize="Small"
+                    Clicked="onMemoryStoreClicked"
+                    Style="{StaticResource Memory}">
+
+                </Button>
+                
+                <Button
+                    Text="xʸ"
+                    Grid.Column="5"
+                    BorderWidth="0"
+                    FontSize="Medium"
+                    Clicked="onOperationClicked"
+                    Style="{StaticResource Operations}">
+
+                </Button>
+            </Grid>
+        </Grid>
+
+
+        <Grid
+            x:Name="Numbers_Operations"
+            RowDefinitions="70,70,70,70,70,70"
+            ColumnDefinitions="*,*,*,*"
+            Grid.Row="2"
+            ColumnSpacing="1"
+            RowSpacing="1"
+            HeightRequest="430">
+
+
+            <Button
+                Text="%"
+                Grid.Column="0"
+                Grid.Row="0"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onPercentClicked">
+
+
+            </Button>
+
+            <Button
+                Text="CE"
+                Grid.Column="1"
+                Grid.Row="0"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onClearResultClicked">
+
+            </Button>
+
+            <Button
+                Text="C"
+                Grid.Column="2"
+                Grid.Row="0"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onClearClicked">
+
+            </Button>
+
+            <Button
+                Text="⌫"
+                Grid.Column="3"
+                Grid.Row="0"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onBackspaceClicked">
+
+            </Button>
+
+            <Button
+                Text="1/x"
+                FontAttributes="Italic"
+                Grid.Column="0"
+                Grid.Row="1"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onReverseClicked">
+
+            </Button>
+
+            <Button
+                x:Name="sqr"
+                Text="x²"
+                FontAttributes="Italic"
+                Grid.Column="1"
+                Grid.Row="1"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onSqrClicked">
+            </Button>
+
+            <Button
+                Text="√x"
+                FontAttributes="Italic"
+                Grid.Column="2"
+                Grid.Row="1"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onSqrtClicked">
+            </Button>
+
+            <Button
+                Text="/"
+                Grid.Column="3"
+                Grid.Row="1"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onOperationClicked">
+            </Button>
+
+
+            <Button
+                Text="7"
+                Grid.Column="0"
+                Grid.Row="2"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="8"
+                Grid.Column="1"
+                Grid.Row="2"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="9"
+                Grid.Column="2"
+                Grid.Row="2"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="*"
+                Grid.Column="3"
+                Grid.Row="2"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onOperationClicked">
+            </Button>
+
+            <Button
+                Text="4"
+                Grid.Column="0"
+                Grid.Row="3"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="5"
+                Grid.Column="1"
+                Grid.Row="3"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="6"
+                Grid.Column="2"
+                Grid.Row="3"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="-"
+                Grid.Column="3"
+                Grid.Row="3"
+                TextColor="White"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onOperationClicked">
+            </Button>
+
+            <Button
+                Text="1"
+                Grid.Column="0"
+                Grid.Row="4"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="2"
+                Grid.Column="1"
+                Grid.Row="4"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="3"
+                Grid.Column="2"
+                Grid.Row="4"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="+"
+                Grid.Column="3"
+                Grid.Row="4"
+                TextColor="White"
+                FontSize="Small"
+                Style="{StaticResource Operations}"
+                Clicked="onOperationClicked">
+            </Button>
+
+            <Button
+                Text="+/-"
+                Grid.Column="0"
+                Grid.Row="5"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onSignClicked">
+            </Button>
+
+            <Button
+                Text="0"
+                Grid.Column="1"
+                Grid.Row="5"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onNumberClicked">
+            </Button>
+
+            <Button
+                Text="."
+                Grid.Column="2"
+                Grid.Row="5"
+                FontSize="Small"
+                Style="{StaticResource Numbers}"
+                Clicked="onDotClicked">
+            </Button>
+
+            <Button
+                Text="="
+                Grid.Column="3"
+                Grid.Row="5"
+                TextColor="Black"
+                FontSize="Small"
+                Clicked="onEqualClicked">
+                
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="Result">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#4cc2ff"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Blue"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#4cc2ff" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Aqua"/>
+                            </VisualState.Setters>
+                        </VisualState>
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+
+        </Grid>
+                
+
+    </Grid>
+
+
+
+
+
+</ContentPage>
