@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-04T20:24:29.092Z" agent="5.0 (Windows)" etag="Te0QTiwIoRzHTjS3OgW-" version="21.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-04T21:57:03.764Z" agent="5.0 (Windows)" etag="gm2WX60Vxqs-gEEubxPR" version="21.0.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2603" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -245,7 +245,7 @@
         </mxCell>
         <mxCell id="LWWQnl1ngwFNCBqljbHl-46" value="Seat" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="-490" y="250" width="160" height="164" as="geometry">
-            <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
+            <mxRectangle x="-490" y="250" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="LWWQnl1ngwFNCBqljbHl-47" value="seatClass: SeatClass" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LWWQnl1ngwFNCBqljbHl-46">
