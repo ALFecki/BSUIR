@@ -1,92 +1,102 @@
-<mxfile host="app.diagrams.net" modified="2023-03-05T22:41:40.035Z" agent="5.0 (Windows)" etag="_UsjJUjduQ-AvZbS34rK" version="21.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-06T20:53:18.239Z" agent="5.0 (Windows)" etag="I5FB0DqKs6n4CizMjNoO" version="21.0.2" type="github">
   <diagram name="Страница 1" id="mFjCaXx6Kx_iEhtSYMrV">
     <mxGraphModel dx="1500" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-3" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="60" y="280" width="115" height="213" as="geometry" />
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-5" target="EA_qAM9MpWt_pfTO48UK-6">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-1" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="EpERm-0y6BSmMRAD3uFT-3">
-          <mxGeometry x="6.764705882352942" width="94.70588235294119" height="173.0625" as="geometry" />
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-5" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Начало работы с программой&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="482" y="130" width="205" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-2" value="&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Customer&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EpERm-0y6BSmMRAD3uFT-3">
-          <mxGeometry x="9.115294117647059" y="173.0625" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="230" y="30" width="540" height="623" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-5" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Search for tickets&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="344" y="203" width="160" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-6" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Order tickets&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="320" y="370" width="150" height="93" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-7" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Create account&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="80" width="160" height="98" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-8" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Make review&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="290" y="500" width="150" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-10" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="837" y="300" width="113" height="213" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-11" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="EpERm-0y6BSmMRAD3uFT-10">
-          <mxGeometry x="7.0625" width="98.875" height="173.0625" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-12" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Admin&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="EpERm-0y6BSmMRAD3uFT-10">
-          <mxGeometry x="21.502499999999998" y="173.0625" width="70" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-15" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Add new avialines&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="90" width="170" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-16" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Change flights information&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="530" y="270" width="170" height="111.5" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-17" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Delete avialines&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="473" width="160" height="107" as="geometry" />
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-7">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="200" y="378" as="sourcePoint" />
-            <mxPoint x="250" y="328" as="targetPoint" />
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-6" target="EA_qAM9MpWt_pfTO48UK-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="330" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-6">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="200" y="378" as="sourcePoint" />
-            <mxPoint x="350" y="478" as="targetPoint" />
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-6" target="EA_qAM9MpWt_pfTO48UK-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-6" value="Авторизация" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="525" y="275" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-7" target="EA_qAM9MpWt_pfTO48UK-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-7" value="Таблица Users" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="790" y="230" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-10" target="EA_qAM9MpWt_pfTO48UK-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-10" value="Регистрация" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="384" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-13" target="EA_qAM9MpWt_pfTO48UK-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-13" value="Запрос на поиск билетов" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="525" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-15" target="EA_qAM9MpWt_pfTO48UK-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-15" value="Доступные рейсы, места в самолетах" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="810" y="440" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-17" target="EA_qAM9MpWt_pfTO48UK-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-17" value="Выбор нужных билетов" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="525" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="720" />
+              <mxPoint x="410" y="380" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-8">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="200" y="378" as="sourcePoint" />
-            <mxPoint x="240" y="438" as="targetPoint" />
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-22" value="Нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EA_qAM9MpWt_pfTO48UK-21">
+          <mxGeometry x="-0.0277" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-16">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="810" y="393" as="sourcePoint" />
-            <mxPoint x="780" y="388" as="targetPoint" />
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-19" target="EA_qAM9MpWt_pfTO48UK-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-19" value="Оформление заказа?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="525" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=71.25;entryDy=40;entryPerimeter=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-23" target="EA_qAM9MpWt_pfTO48UK-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-23" target="EA_qAM9MpWt_pfTO48UK-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-23" value="Обработка заказа" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-25" value="Проверка заказа" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="610" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="EA_qAM9MpWt_pfTO48UK-27" target="EA_qAM9MpWt_pfTO48UK-29">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="720" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-27" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-15">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="810" y="393" as="sourcePoint" />
-            <mxPoint x="837" y="358" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-27" value="Покупка билетов" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-28" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-17">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="810" y="393" as="sourcePoint" />
-            <mxPoint x="770" y="413" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="EpERm-0y6BSmMRAD3uFT-29" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="EpERm-0y6BSmMRAD3uFT-5">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="200" y="380" as="sourcePoint" />
-            <mxPoint x="500" y="390" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="EA_qAM9MpWt_pfTO48UK-29" value="Конец работы программы" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="990" y="560" width="160" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
